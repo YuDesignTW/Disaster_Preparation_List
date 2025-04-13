@@ -27,7 +27,8 @@ window.livingDataEmbedded = {
       "description": "可折疊式行動馬桶",
       "scaling": "people_days_divided",
       "scaling_factor": 3, // 每3天用完2個
-      "note": "適合高樓或無水狀況者使用，如廁後所需衛生紙已於醫療用品中統計，如需要可增加需求數量"
+      "note": "適合高樓或無水狀況者使用，如廁後所需衛生紙已於醫療用品中統計，如需要可增加需求數量",
+      "link": "https://s.shopee.tw/4firKdLW48",
     },
     {
       "name": "凝膠包／吸收墊",
@@ -36,7 +37,8 @@ window.livingDataEmbedded = {
       "description": "攪拌後可凝固排泄物，無臭、安全",
       "scaling": "people_days_divided",
       "scaling_factor": 1, // 每3天用完2個
-      "note": "當無水的時候，可以處理排泄物，若沒有凝膠包與吸收墊則改用垃圾袋處理"
+      "note": "當無水的時候，可以處理排泄物，若沒有凝膠包與吸收墊則改用垃圾袋處理",
+      "link": "https://s.shopee.tw/AUgeHsv3Me",
     },
     {
       "name": "垃圾袋",
@@ -87,7 +89,8 @@ window.livingDataEmbedded = {
       "unit": "組",
       "description": "作為濾水用途",
       "scaling": "none",
-      "note": "用於濾水，可過濾水中的雜質，提供乾淨的飲用水"
+      "note": "用於濾水，可過濾水中的雜質，提供乾淨的飲用水",
+      "link": "https://s.shopee.tw/9pQxUkQABX",
     },
     {
       "name": "夾鏈袋、食物用耐熱袋",

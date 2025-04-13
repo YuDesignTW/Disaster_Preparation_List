@@ -10,7 +10,8 @@ window.infoDataEmbedded = {
       "unit": "個",
       "description": "隨身電子設備充電",
       "scaling": "people", // 隨人數變化
-      "note": "建議容量20000mAh以上，可支援多次手機充電"
+      "note": "建議容量20000mAh以上，可支援多次手機充電",
+      "link": "https://s.shopee.tw/AUgeJuSQgm",
     },
     {
       "name": "收音機",
@@ -18,7 +19,8 @@ window.infoDataEmbedded = {
       "unit": "台",
       "description": "接收災害廣播與官方通知",
       "scaling": "none", // 不隨人數和天數變化
-      "note": "災害時廣播常是最穩定的官方訊息來源，選擇多種供電方式"
+      "note": "災害時廣播常是最穩定的官方訊息來源，選擇多種供電方式",
+      "link": "https://s.shopee.tw/AUgeJuSQgm",
     },
     {
       "name": "手搖/太陽能發電機",
@@ -26,7 +28,8 @@ window.infoDataEmbedded = {
       "unit": "台",
       "description": "接收災害廣播與官方通知",
       "scaling": "none", // 不隨人數和天數變化
-      "note": "作為發電機使用，可發電給收音機、手機等設備，通常與收音機或行動電源一起使用"
+      "note": "作為發電機使用，可發電給收音機、手機等設備，通常與收音機或行動電源一起使用",
+      "link": "https://s.shopee.tw/60EExqM1UF",
     },
     {
       "name": "備用手機",
@@ -50,7 +53,8 @@ window.infoDataEmbedded = {
       "unit": "個",
       "description": "非電子求救信號發送",
       "scaling": "people", // 隨人數變化
-      "note": "聲音信號可在通訊中斷時發出求救，攜帶方便"
+      "note": "聲音信號可在通訊中斷時發出求救，攜帶方便",
+      "link": "https://s.shopee.tw/2LKwZctkhO",
     },
     {
       "name": "紙本聯絡卡、白板／留言區",

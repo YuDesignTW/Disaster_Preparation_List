@@ -11,7 +11,7 @@ window.foodDataEmbedded = {
       "description": "每人每天3公升水，適當補充身體水分",
       "scaling": "people_days", // 隨人數和天數變化
       "note": "災難時每人每天需要2-3公升飲用水，夏季或高溫環境可能需要更多",
-      "link": "https://www.pchome.com.tw/search?q=急救包",
+      "link": "https://s.shopee.tw/LZsATh8Rc",
     },
     {
       "name": "即食飯、餅乾、泡麵",
@@ -19,7 +19,8 @@ window.foodDataEmbedded = {
       "unit": "份",
       "description": "主食提供碳水化合物能量來源",
       "scaling": "people_days", // 隨人數和天數變化
-      "note": "選擇不需烹煮或簡易加熱的主食，提供基礎熱量"
+      "note": "選擇不需烹煮或簡易加熱的主食，提供基礎熱量",
+      "link": "https://s.shopee.tw/5KyY6xg9Ja",
     },
     {
       "name": "蛋白質罐頭(鮪魚/雞肉)",
@@ -27,7 +28,8 @@ window.foodDataEmbedded = {
       "unit": "份",
       "description": "補充蛋白質，維持肌肉",
       "scaling": "people_days", // 隨人數和天數變化
-      "note": "罐頭保存期長，每日至少一份蛋白質食物維持體力"
+      "note": "罐頭保存期長，每日至少一份蛋白質食物維持體力",
+      "link": "https://s.shopee.tw/7zzJI2IcK5",
     },
     {
       "name": "高熱量(能量棒/巧克力)",
@@ -35,7 +37,8 @@ window.foodDataEmbedded = {
       "unit": "份",
       "description": "高熱量食物補充脂肪與快速能量",
       "scaling": "people_days", // 隨人數和天數變化
-      "note": "能量密度高，提供快速能量及心理滿足感"
+      "note": "能量密度高，提供快速能量及心理滿足感",
+      "link": "https://s.shopee.tw/9KUgsdW2eP",
     },
     {
       "name": "電解質粉",
@@ -43,7 +46,8 @@ window.foodDataEmbedded = {
       "unit": "包",
       "description": "補充電解質維持體液平衡與精神",
       "scaling": "people_days", // 隨人數和天數變化
-      "note": "避免脫水及維持電解質平衡，特別是腹瀉或大量出汗狀況"
+      "note": "避免脫水及維持電解質平衡，特別是腹瀉或大量出汗狀況",
+      "link": "https://s.shopee.tw/4q2HWRgTjA",
     },
     {
       "name": "綜合維他命",
