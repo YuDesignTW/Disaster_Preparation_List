@@ -45,14 +45,14 @@ body {
     display: flex;
     align-items: center;
     position: absolute;
-    animation: marquee 60s linear infinite;
+    animation: marquee 85s linear infinite;
     background-color: transparent;
     height: 100%;
 }
 
 .marquee-content.reverse {
     animation-direction: reverse;
-    animation-duration: 60s;
+    animation-duration: 85s;
 }
 
 .marquee-item {
@@ -83,7 +83,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    padding: 40px 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -97,17 +97,19 @@ body {
 
 .buttons-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .option-button {
     position: relative;
     background-color: #f5f5f4;
     border-radius: 12px;
-    padding: 25px 20px;
+    padding: 30px 25px;
     text-align: left;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -115,7 +117,7 @@ body {
     color: #333;
     border: 2px solid #e0e0e0;
     overflow: hidden;
-    height: 130px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,6 +206,8 @@ body {
     
     .buttons-container {
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        gap: 15px;
     }
     
     .option-button {
@@ -215,5 +219,6 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
     .buttons-container {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
     }
 } 
