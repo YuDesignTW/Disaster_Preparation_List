@@ -10,7 +10,8 @@ window.foodDataEmbedded = {
       "unit": "公升",
       "description": "每人每天3公升水，適當補充身體水分",
       "scaling": "people_days", // 隨人數和天數變化
-      "note": "災難時每人每天需要2-3公升飲用水，夏季或高溫環境可能需要更多"
+      "note": "災難時每人每天需要2-3公升飲用水，夏季或高溫環境可能需要更多",
+      "link": "https://www.pchome.com.tw/search?q=急救包",
     },
     {
       "name": "即食飯、餅乾、泡麵",

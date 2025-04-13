@@ -140,10 +140,23 @@ document.addEventListener('DOMContentLoaded', function() {
             // 詳細信息區塊
             const itemDetails = document.createElement('div');
             itemDetails.className = 'item-details';
-            itemDetails.innerHTML = `
+            
+            // 準備詳細信息的HTML內容
+            let detailsHTML = `
                 <div class="item-description">${item.description || ''}</div>
                 <div class="item-note">${item.note || ''}</div>
             `;
+            
+            // 如果有連結，添加"去準備"按鈕
+            if (item.link) {
+                detailsHTML += `
+                    <div class="details-actions">
+                        <a href="${item.link}" target="_blank" class="prepare-button">去準備</a>
+                    </div>
+                `;
+            }
+            
+            itemDetails.innerHTML = detailsHTML;
             
             // 添加項目和詳細信息到容器
             itemContainer.appendChild(checklistItem);

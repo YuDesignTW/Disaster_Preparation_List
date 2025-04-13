@@ -577,18 +577,25 @@ body {
 }
 
 .checklist-item::after {
-    content: "+";
+    content: "▼";
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
-    color: #3C81E0;
+    font-size: 16px;
+    color: white;
     transition: all 0.3s ease;
+    background-color: #3C81E0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .checklist-item.expanded::after {
-    content: "-";
+    content: "▲";
 }
 
 .col-checkbox, .checkbox {
@@ -726,4 +733,43 @@ body {
     font-size: 16px;
     color: #3C81E0;
     font-weight: bold;
+}
+
+.details-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.prepare-button {
+    background-color: #ffffff;
+    color: #3C81E0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.prepare-button:hover {
+    background-color: #2b6fc0;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.item-details {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: 0 0 8px 8px;
+    display: none;
+    position: relative;
 } 

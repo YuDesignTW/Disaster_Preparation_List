@@ -6,9 +6,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-// 圖層群組
-const dangerLayer = L.layerGroup().addTo(map);
-const shelterLayer = L.layerGroup().addTo(map);
+// 圖層群組 - 預設不添加到地圖
+const dangerLayer = L.layerGroup();
+const shelterLayer = L.layerGroup();
 let routeControl = null;
 
 // 標記變數
