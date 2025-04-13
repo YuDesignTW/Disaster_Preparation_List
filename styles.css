@@ -11,7 +11,6 @@ body {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    overflow: hidden;
 }
 
 .frame {
@@ -346,6 +345,7 @@ body {
 .detail-page.active {
     visibility: visible;
     opacity: 1;
+    overflow-y: auto;
 }
 
 /* 详情页左侧 */
@@ -772,4 +772,425 @@ body {
     border-radius: 0 0 8px 8px;
     display: none;
     position: relative;
+}
+
+/* 添加RWD設計 - 手機版 */
+@media screen and (max-width: 600px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .frame {
+        height: auto;
+        position: static;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* 重置所有區塊的絕對定位，改為流動布局 */
+    .left-section, .center-top, .right-section, .center-content, .bottom-section {
+        position: static;
+        width: 100%;
+        height: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        border: none;
+    }
+    
+    /* 調整順序：居家避難包、01、02、03、04、05 */
+    .center-content {
+        order: 1;
+        padding: 40px 20px;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    .left-section {
+        order: 2;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    .bottom-section {
+        order: 3;
+        flex-direction: column;
+    }
+    
+    .medical-block {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    .living-block {
+        width: 100%;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    .right-section {
+        order: 4;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    .center-top {
+        order: 5;
+        border-bottom: 4px solid #3C81E0;
+    }
+    
+    /* 調整區塊內容 */
+    .food-block, .tools-block, .info-block, .medical-block, .living-block {
+        padding: 30px 15px;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    /* 調整圖標大小 */
+    .icon {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .tools-block .icon, .medical-block .icon, .living-block .icon {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* 調整文字大小 */
+    .number {
+        font-size: 60px;
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .category {
+        font-size: 16px;
+    }
+    
+    /* 調整中央內容區樣式 */
+    .center-content h1 {
+        font-size: 32px;
+    }
+    
+    .description {
+        font-size: 14px;
+    }
+    
+    /* 總進度調整 */
+    .total-progress-container {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-top: 20px;
+    }
+    
+    /* 讓01和04區塊在手機版與02, 03, 05相同，改為水平排列 */
+    .food-block, .info-block {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    /* 調整文字內容寬度 */
+    .food-block .text-content,
+    .info-block .text-content {
+        max-width: 50%;
+        margin-bottom: 0;
+    }
+    
+    /* 調整圖標組 */
+    .food-block .icon-group,
+    .info-block .icon-group {
+        align-self: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    /* 詳情頁面RWD設計 */
+    .detail-page {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    /* 左側區域調整 */
+    .detail-left {
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        overflow-y: visible;
+    }
+    
+    .detail-header {
+        margin-bottom: 20px;
+    }
+    
+    .detail-number {
+        font-size: 70px;
+    }
+    
+    .detail-title {
+        font-size: 28px;
+    }
+    
+    .detail-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .detail-description p, 
+    .detail-description li {
+        margin-bottom: 10px;
+    }
+    
+    /* 設置按鈕區域調整為水平排列 */
+    .settings-area {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .settings-button {
+        width: 48%;
+    }
+    
+    /* 右側區域調整 */
+    .detail-right {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        overflow-y: visible;
+    }
+    
+    /* 進度條調整 */
+    .progress-bar {
+        margin-bottom: 15px;
+    }
+    
+    .progress-text, .progress-count {
+        font-size: 16px;
+    }
+    
+    /* 返回按鈕調整 */
+    .back-button {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        z-index: 110;
+        background-color: #3C81E0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .back-button svg {
+        color: white;
+    }
+    
+    /* 清單頁面調整 */
+    .checklist-header {
+        position: static;
+        background-color: transparent;
+        z-index: auto;
+        padding: 10px 0;
+        font-size: 12px;
+    }
+    
+    .col-checkbox, .checkbox {
+        width: 36px; /* 加大觸控區域 */
+    }
+    
+    .col-per-person, .col-people, .col-days, .col-total,
+    .item-per-person, .item-people, .item-days, .item-total {
+        font-size: 12px;
+    }
+    
+    .item-name {
+        font-size: 14px;
+        font-weight: bold;
+        padding-right: 5px;
+        line-height: 1.3;
+    }
+    
+    /* 優化展開/收起按鈕 */
+    .checklist-item::after {
+        width: 36px;
+        height: 36px;
+        right: 10px;
+    }
+    
+    /* 詳情頁內容調整 */
+    .item-details {
+        padding: 15px 10px;
+    }
+    
+    .item-description, .item-note {
+        font-size: 14px;
+    }
+    
+    /* 優化「去準備」按鈕 */
+    .prepare-button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    
+    /* 增大複選框大小 */
+    .checkbox {
+        width: 28px;
+        height: 28px;
+    }
+    
+    /* 確保整個頁面可以滾動 */
+    .detail-page.active {
+        position: fixed;
+        height: 100%;
+        min-height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 確保左欄不會固定在頂部 */
+    .detail-left {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        overflow-y: visible;
+    }
+    
+    /* 簡化清單標題，針對小屏幕顯示 */
+    .col-per-person {
+        display: none;
+    }
+    
+    .col-people::before {
+        content: '人';
+        display: block;
+    }
+    
+    .col-days::before {
+        content: '天';
+        display: block;
+    }
+    
+    .col-total::before {
+        content: '數量';
+        display: block;
+    }
+    
+    /* 調整清單項內容顯示方式 */
+    .item-per-person {
+        display: none; /* 在小屏幕上不顯示每人所需，節省空間 */
+    }
+    
+    /* 改變項目排列方式 */
+    .checklist-item {
+        display: grid;
+        grid-template-columns: 36px 1fr 60px;
+        gap: 5px;
+        align-items: center;
+        padding: 15px 45px 15px 10px; /* 右側留出展開按鈕的空間 */
+    }
+    
+    /* 調整展開後詳情的樣式 */
+    .details-actions {
+        margin-top: 20px;
+    }
+    
+    /* 確保複選框顯示正確 */
+    .checkbox:checked::after {
+        left: 6px;
+    }
+    
+    /* 修改詳情頁動畫效果 */
+    @keyframes slideInMobile {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    .detail-page.active .detail-right {
+        animation: none;
+    }
+    
+    /* 調整CHECK LIST項目顯示，優化小屏幕布局 */
+    .checklist-item {
+        padding: 15px 45px 15px 10px; /* 右側留出展開按鈕的空間 */
+    }
+    
+    /* 隱藏人數、天數、每人所需欄位 */
+    .col-per-person, .item-per-person, 
+    .col-people, .item-people,
+    .col-days, .item-days {
+        display: none;
+    }
+    
+    /* 調整項目名稱樣式 */
+    .item-name {
+        font-size: 14px;
+        font-weight: bold;
+        padding-right: 5px;
+        line-height: 1.3;
+    }
+    
+    /* 調整總計欄位樣式 */
+    .item-total {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+/* 平板設備的RWD設計 */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    /* 詳情頁面調整 - 保持左右布局但調整比例 */
+    .detail-left {
+        width: 40%;
+    }
+    
+    .detail-right {
+        width: 60%;
+    }
+    
+    /* 調整左側內容 */
+    .detail-description {
+        font-size: 14px;
+    }
+    
+    .detail-number {
+        font-size: 80px;
+    }
+    
+    .detail-title {
+        font-size: 28px;
+    }
+    
+    /* 調整返回按鈕 */
+    .back-button {
+        right: 20px;
+        top: 20px;
+    }
+    
+    /* 調整清單項顯示 */
+    .checklist-item {
+        padding: 12px 40px 12px 10px;
+    }
+    
+    .item-name {
+        font-size: 16px;
+    }
+    
+    .item-per-person, .item-people, .item-days, .item-total {
+        font-size: 14px;
+    }
+    
+    /* 調整展開按鈕 */
+    .checklist-item::after {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
 } 
