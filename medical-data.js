@@ -19,7 +19,6 @@ window.medicalDataEmbedded = {
       "description": "需包含繃帶、紗布、膠帶、藥膏、消毒液等",
       "scaling": "people", // 隨人數變化
       "note": "每人一套基本急救用品",
-      "link": "https://www.pchome.com.tw/search?q=急救包"
     },
     {
         "name": "常見藥物",
@@ -28,7 +27,6 @@ window.medicalDataEmbedded = {
         "description": "感冒退燒藥、胃乳片胃藥、止吐暈車、止痛消炎藥、發泡錠、眼藥水、萬用藥膏、蚊蟲叮咬藥膏",
         "scaling": "none",
         "note": "各式成藥，準備一組即可，須注意過期時間",
-        "link": "https://www.pchome.com.tw/search?q=常備藥"
     },
     {
       "name": "口罩/N95口罩",
