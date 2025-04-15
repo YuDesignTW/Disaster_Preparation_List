@@ -512,7 +512,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (currentPeople === 1) {
                     newPeople = 2;
                 } else if (currentPeople === 2) {
+                    newPeople = 3;
+                } else if (currentPeople === 3) {
                     newPeople = 4;
+                } else if (currentPeople === 4) {
+                    newPeople = 5;
                 } else {
                     newPeople = 1;
                 }
