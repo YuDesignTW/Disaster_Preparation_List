@@ -221,4 +221,84 @@ body {
         grid-template-columns: repeat(2, 1fr);
         max-width: 700px;
     }
+}
+
+/* 語言選擇器樣式 - landing頁面 */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.language-selector button {
+    background-color: #F5F5F5;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.language-selector button:hover {
+    background-color: #E5E5E5;
+    color: #3C81E0;
+}
+
+.language-selector button.active {
+    background-color: #3C81E0;
+    color: white;
+}
+
+/* 手機版語言選擇器圖標 */
+.language-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        margin: 0;
+        z-index: 50;
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    .language-selector.visible {
+        display: flex;
+    }
+    
+    .language-icon {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 49;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        cursor: pointer;
+        background-image: url('images/language.png');
+        background-size: 32px 32px;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .language-selector button {
+        margin-bottom: 5px;
+        width: 100px;
+        text-align: center;
+    }
 } 

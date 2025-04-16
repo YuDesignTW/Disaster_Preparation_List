@@ -6,78 +6,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkboxes = document.querySelectorAll('.checkbox');
     const progressCounts = document.querySelectorAll('.progress-count');
 
-    // 加載各類數據
-    let foodData = null;
-    let medicalData = null;
-    let livingData = null;
-    let infoData = null;
-    let toolsData = null;
-    
     // 全局設定，所有頁面共享
-    let globalSettings = {
-        people: 1,
-        days: 14
+    window.globalSettings = {
+        people: window.appData.config.defaultPeople,
+        days: window.appData.config.defaultDays
     };
     
     // 將通用的加載數據邏輯抽象為一個函數
-    function loadData(dataType, generateFunction) {
+    function loadData(categoryKey, generateFunction) {
         try {
-            // 從全局變量獲取數據
-            let data = null;
-            switch(dataType) {
-                case 'food':
-                    data = window.foodDataEmbedded;
-                    break;
-                case 'medical':
-                    data = window.medicalDataEmbedded;
-                    break;
-                case 'living':
-                    data = window.livingDataEmbedded;
-                    break;
-                case 'info':
-                    data = window.infoDataEmbedded;
-                    break;
-                case 'tools':
-                    data = window.toolsDataEmbedded;
-                    break;
-            }
+            // 從統一資料源獲取數據
+            const data = window.appData.items[categoryKey];
             
             if (!data) {
-                console.error(`${dataType}數據未加載，請確保${dataType}-data.js已經正確引入`);
+                console.error(`${categoryKey}數據未找到`);
                 return null;
             }
             
             // 生成清單項目
-            generateFunction(data);
+            generateFunction({category: categoryKey, items: data});
             
             // 確保數據加載後立即更新數量
             setTimeout(updateQuantities, 100);
             
-            return data;
+            return {category: categoryKey, items: data};
         } catch (error) {
-            console.error(`加載${dataType}數據失敗: ${error.message}`);
+            console.error(`加載${categoryKey}數據失敗: ${error.message}`);
             return null;
         }
     }
 
     function loadFoodData() {
-        foodData = loadData('food', generateFoodItems);
+        return loadData('food', generateFoodItems);
     }
 
     function loadMedicalData() {
-        medicalData = loadData('medical', generateMedicalItems);
+        return loadData('medical', generateMedicalItems);
     }
     
     function loadLivingData() {
-        livingData = loadData('living', generateLivingItems);
+        return loadData('living', generateLivingItems);
     }
     
     function loadInfoData() {
-        infoData = loadData('info', generateInfoItems);
+        return loadData('info', generateInfoItems);
     }
     
     function loadToolsData() {
-        toolsData = loadData('tools', generateToolsItems);
+        return loadData('tools', generateToolsItems);
     }
 
     // 抽象出公共的generateItems函數
@@ -103,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const divider = checklist.querySelector('.checklist-divider');
         
         // 清除現有的清單項目（如果有的話）
-        const existingItems = checklist.querySelectorAll('.checklist-item, .item-details');
+        const existingItems = checklist.querySelectorAll('.item-container');
         existingItems.forEach(item => item.remove());
         
         // 確定類別
@@ -118,17 +94,21 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const checklistItem = document.createElement('div');
             checklistItem.className = 'checklist-item';
+            checklistItem.setAttribute('data-item-key', item.key);
             
             // 檢查之前是否有保存的選中狀態
-            const isChecked = localStorage.getItem(`${category}-${item.name}`) === 'true';
+            const isChecked = localStorage.getItem(`${category}-${item.key}`) === 'true';
+            
+            // 獲取本地化的項目名稱
+            const itemName = LocaleManager.getItemText(category, item.key, 'name');
             
             // 基本項目信息
             checklistItem.innerHTML = `
                 <input type="checkbox" class="checkbox" ${isChecked ? 'checked' : ''}>
-                <span class="item-name">${item.name}</span>
-                <span class="item-per-person">${item.quantity}${item.unit}</span>
-                <span class="item-people">${globalSettings.people}人</span>
-                <span class="item-days">${globalSettings.days}天</span>
+                <span class="item-name">${itemName}</span>
+                <span class="item-per-person">${item.quantity}${LocaleManager.getUnitText(item.unit)}</span>
+                <span class="item-people">${globalSettings.people}</span>
+                <span class="item-days">${globalSettings.days}</span>
                 <span class="item-total">-</span>
             `;
             
@@ -141,17 +121,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const itemDetails = document.createElement('div');
             itemDetails.className = 'item-details';
             
+            // 獲取本地化的描述和備註
+            const itemDesc = LocaleManager.getItemText(category, item.key, 'description');
+            const itemNote = LocaleManager.getItemText(category, item.key, 'note');
+            
             // 準備詳細信息的HTML內容
             let detailsHTML = `
-                <div class="item-description">${item.description || ''}</div>
-                <div class="item-note">${item.note || ''}</div>
+                <div class="item-description">${itemDesc || ''}</div>
+                <div class="item-note">${itemNote || ''}</div>
             `;
             
             // 如果有連結，添加"去準備"按鈕
             if (item.link) {
                 detailsHTML += `
                     <div class="details-actions">
-                        <a href="${item.link}" target="_blank" class="prepare-button">去準備</a>
+                        <a href="${item.link}" target="_blank" class="prepare-button">${LocaleManager.getText('prepare', 'common')}</a>
                     </div>
                 `;
             }
@@ -194,47 +178,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 從頁面ID獲取類別名稱，用於錯誤消息
     function getCategoryNameByPageId(pageId) {
-        switch(pageId) {
-            case 'detail-01': return '食物';
-            case 'detail-02': return '醫療衛生';
-            case 'detail-03': return '生活用品';
-            case 'detail-04': return '電子通訊';
-            case 'detail-05': return '工具類';
-            default: return '未知類別';
-        }
+        const category = window.appData.categories.find(cat => cat.detailPageId === pageId);
+        return category ? LocaleManager.getText('title', `categories.${category.key}`) : '未知類別';
     }
     
     // 從頁面ID獲取類別，用於本地存儲
     function getCategoryByPageId(pageId) {
-        switch(pageId) {
-            case 'detail-01': return 'food';
-            case 'detail-02': return 'medical';
-            case 'detail-03': return 'living';
-            case 'detail-04': return 'info';
-            case 'detail-05': return 'tools';
-            default: return '';
-        }
+        const category = window.appData.categories.find(cat => cat.detailPageId === pageId);
+        return category ? category.key : '';
     }
 
     // 簡化的生成函數，調用公共邏輯
     function generateFoodItems(data) {
-        generateItems(data || foodData, 'detail-01');
+        generateItems(data, 'detail-01');
     }
 
     function generateMedicalItems(data) {
-        generateItems(data || medicalData, 'detail-02');
+        generateItems(data, 'detail-02');
     }
     
     function generateLivingItems(data) {
-        generateItems(data || livingData, 'detail-03');
+        generateItems(data, 'detail-03');
     }
     
     function generateInfoItems(data) {
-        generateItems(data || infoData, 'detail-04');
+        generateItems(data, 'detail-04');
     }
     
     function generateToolsItems(data) {
-        generateItems(data || toolsData, 'detail-05');
+        generateItems(data, 'detail-05');
+    }
+
+    // 處理複選框變化的通用函數
+    function handleCheckboxChange(checkbox) {
+        updateProgress();
+        
+        // 添加或移除selected類別
+        const checklist_item = checkbox.closest('.checklist-item');
+        if (checklist_item) {
+            if (checkbox.checked) {
+                checklist_item.classList.add('selected');
+            } else {
+                checklist_item.classList.remove('selected');
+            }
+            
+            // 保存選中狀態到localStorage
+            const itemKey = checklist_item.getAttribute('data-item-key');
+            const detailPage = checkbox.closest('.detail-page');
+            const category = getCategoryByPageId(detailPage.id);
+            localStorage.setItem(`${category}-${itemKey}`, checkbox.checked);
+        }
+        
+        // 更新總進度
+        updateTotalProgress();
     }
 
     // 為新添加的複選框綁定事件
@@ -242,26 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const newCheckboxes = document.querySelectorAll('.checkbox:not([data-bound])');
         newCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function() {
-                updateProgress();
-                
-                // 添加或移除selected類別
-                const checklist_item = this.closest('.checklist-item');
-                if (checklist_item) {
-                    if (this.checked) {
-                        checklist_item.classList.add('selected');
-                    } else {
-                        checklist_item.classList.remove('selected');
-                    }
-                    
-                    // 保存選中狀態到localStorage
-                    const itemName = checklist_item.querySelector('.item-name').textContent;
-                    const detailPage = this.closest('.detail-page');
-                    const category = getCategoryByPageId(detailPage.id);
-                    localStorage.setItem(`${category}-${itemName}`, this.checked);
-                }
-                
-                // 更新總進度
-                updateTotalProgress();
+                handleCheckboxChange(this);
             });
             checkbox.setAttribute('data-bound', 'true');
         });
@@ -322,9 +299,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const progressText = detailPage.querySelector('.progress-text');
             if (progressText) {
                 if (checkedBoxes === totalBoxes && totalBoxes > 0) {
-                    progressText.textContent = "已完成 ";
+                    progressText.textContent = LocaleManager.getText('completed', 'common');
                 } else {
-                    progressText.textContent = "準備進度 ";
+                    progressText.textContent = LocaleManager.getText('progress', 'common');
                 }
             }
         });
@@ -340,11 +317,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const daysSettings = document.querySelectorAll('.days-setting');
         
         peopleSettings.forEach(button => {
-            button.querySelector('span:last-child').textContent = `${globalSettings.people}人`;
+            button.querySelector('span:last-child').textContent = 
+                `${globalSettings.people}${LocaleManager.getText('person', 'common')}`;
         });
         
         daysSettings.forEach(button => {
-            button.querySelector('span:last-child').textContent = `${globalSettings.days}天`;
+            button.querySelector('span:last-child').textContent = 
+                `${globalSettings.days}${LocaleManager.getText('day', 'common')}`;
         });
         
         // 更新所有物品的數量
@@ -367,52 +346,41 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 更新人數和天數顯示
             page.querySelectorAll('.item-people').forEach(cell => {
-                cell.textContent = `${globalSettings.people}人`;
+                cell.textContent = `${globalSettings.people}`;
             });
             
             page.querySelectorAll('.item-days').forEach(cell => {
-                cell.textContent = `${globalSettings.days}天`;
+                cell.textContent = `${globalSettings.days}`;
             });
             
             // 獲取相應的數據集
             const category = getCategoryByPageId(page.id);
-            let currentData = null;
+            const categoryData = window.appData.items[category];
             
-            switch(category) {
-                case 'food': currentData = foodData; break;
-                case 'medical': currentData = medicalData; break;
-                case 'living': currentData = livingData; break;
-                case 'info': currentData = infoData; break;
-                case 'tools': currentData = toolsData; break;
-            }
-            
-            if (currentData && currentData.items) {
-                currentData.items.forEach((item, index) => {
-                    if (index < checklistItems.length) {
-                        const checklistItem = checklistItems[index];
-                        const itemName = checklistItem.querySelector('.item-name');
-                        const itemPerPerson = checklistItem.querySelector('.item-per-person');
-                        const itemTotal = checklistItem.querySelector('.item-total');
-                        
-                        if (!itemPerPerson || !itemTotal || !itemName) {
-                            return;
-                        }
-                        
-                        // 確保項目名稱與數據匹配
-                        if (itemName.textContent !== item.name) {
-                            // 修正不匹配的項目名稱
-                            itemName.textContent = item.name;
-                        }
-                        
-                        // 更新每人所需
-                        itemPerPerson.textContent = `${item.quantity}${item.unit}`;
-                        
-                        // 根據不同的縮放類型計算總數量
-                        let totalQuantity = calculateTotalQuantity(item);
-                        
-                        // 更新總計
-                        itemTotal.textContent = `${totalQuantity}${item.unit}`;
+            if (categoryData) {
+                checklistItems.forEach(checklistItem => {
+                    const itemKey = checklistItem.getAttribute('data-item-key');
+                    if (!itemKey) return;
+                    
+                    // 找到對應的數據項目
+                    const dataItem = categoryData.find(item => item.key === itemKey);
+                    if (!dataItem) return;
+                    
+                    const itemPerPerson = checklistItem.querySelector('.item-per-person');
+                    const itemTotal = checklistItem.querySelector('.item-total');
+                    
+                    if (!itemPerPerson || !itemTotal) {
+                        return;
                     }
+                    
+                    // 更新每人所需
+                    itemPerPerson.textContent = `${dataItem.quantity}${LocaleManager.getUnitText(dataItem.unit)}`;
+                    
+                    // 根據不同的縮放類型計算總數量
+                    let totalQuantity = calculateTotalQuantity(dataItem);
+                    
+                    // 更新總計
+                    itemTotal.textContent = `${totalQuantity}${LocaleManager.getUnitText(dataItem.unit)}`;
                 });
             }
         });
@@ -476,26 +444,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 为复选框添加点击事件
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function() {
-                updateProgress();
-                
-                // 添加或移除selected類別
-                const checklist_item = this.closest('.checklist-item');
-                if (checklist_item) {
-                    if (this.checked) {
-                        checklist_item.classList.add('selected');
-                    } else {
-                        checklist_item.classList.remove('selected');
-                    }
-                    
-                    // 保存選中狀態到localStorage
-                    const itemName = checklist_item.querySelector('.item-name').textContent;
-                    const detailPage = this.closest('.detail-page');
-                    const category = getCategoryByPageId(detailPage.id);
-                    localStorage.setItem(`${category}-${itemName}`, this.checked);
-                }
-                
-                // 更新總進度
-                updateTotalProgress();
+                handleCheckboxChange(this);
             });
             checkbox.setAttribute('data-bound', 'true');
         });
@@ -554,6 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 初始化應用
+    LocaleManager.init(); // 首先初始化語言管理器
     initializeEventListeners();
     loadFoodData();
     loadMedicalData();
@@ -562,4 +512,9 @@ document.addEventListener('DOMContentLoaded', function() {
     loadToolsData();
     updateProgress();
     updateTotalProgress();
+    
+    // 語言切換後需要更新清單項目
+    setTimeout(() => {
+        LocaleManager.updateChecklistItems();
+    }, 500);
 }); 

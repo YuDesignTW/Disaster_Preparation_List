@@ -8,13 +8,14 @@
 </head>
 <body>
     <div class="landing-container">
+        <!-- 語言選擇器會通過JavaScript添加到這裡 -->
+        
         <!-- 頂部跑馬燈 -->
         <div class="marquee marquee-top">
             <div class="marquee-content">
                 <img src="images/landing01.png" alt="緊急物資" class="marquee-item">
                 <img src="images/landing01.png" alt="緊急物資" class="marquee-item">
                 <img src="images/landing01.png" alt="緊急物資" class="marquee-item">
-
             </div>
         </div>
         
@@ -70,8 +71,16 @@
         </div>
     </div>
 
+    <!-- 添加新的統一資料檔案和語言資源 -->
+    <script src="locales/zh.js"></script>
+    <script src="locales/en.js"></script>
+    <script src="locales/ja.js"></script>
+    <script src="locales/th.js"></script>
+    <script src="app-data.js"></script>
+    <script src="locale.js"></script>
+
     <script>
-        // 確保跑馬燈圖片加載完成後設置正確的初始位置
+        // 跑馬燈初始化
         window.addEventListener('load', () => {
             const marqueeContents = document.querySelectorAll('.marquee-content');
             marqueeContents.forEach(content => {
@@ -85,6 +94,11 @@
                 // 設置內容寬度
                 content.style.width = `${totalWidth / 2}px`;
             });
+            
+            // 初始化語言管理器
+            if (window.LocaleManager) {
+                window.LocaleManager.init();
+            }
         });
     </script>
 </body>
