@@ -1,34 +1,21 @@
-// English language resource file
+// 中文語言資源檔案
 window.i18n = window.i18n || {};
 window.i18n.en = {
   app_title: "Disaster Preparedness Checklist",
-  sip_title: "SIP (Shelter-In-Place)",
-  home_title: "Home Emergency Kit",
-  home_description: "The goal is to be self-sufficient at home to maintain basic safety and survival, typically for 7-14 days",
-  beta_tag: "Evacuation Route Planning (BETA) ->",
+  sip_title: "BOB (Bug Out Bag)",
+  home_title: "Emergency Evacuation Bag",
+  home_description: "The design goal of the BOB is to help you survive for at least 72 hours (3 days) by carrying the most essential survival supplies in an emergency situation.",
+  beta_tag: "Evacuation Route Planning (BETA)",
   total_progress: "Total Progress",
   
-  // landing page
-  landing: {
-    main_title: "Disaster Preparedness Checklist",
-    sip_button_title: "Shelter-in-Place",
-    sip_button_subtitle: "Home Emergency Kit",
-    edc_button_title: "Everyday Carry",
-    edc_button_subtitle: "Daily Essentials",
-    ghb_button_title: "Get Home Bag",
-    ghb_button_subtitle: "Return Safely Home",
-    bob_button_title: "Bug Out Bag",
-    bob_button_subtitle: "Emergency Evacuation",
-    coming_soon: "Coming Soon"
-  },
   
   common: {
     progress: "Preparation Progress",
     completed: "Completed",
-    people: "People",
-    days: "Days",
-    person: "person",
-    day: "day",
+    people: "Number of People",
+    days: "Number of Days",
+    person: "Person",
+    day: "Day",
     total: "Total",
     per_person: "Per Person",
     item: "Item",
@@ -38,29 +25,19 @@ window.i18n.en = {
   
   categories: {
     food: {
-      title: "Food",
+      title: "Emergency Food",
       category: "FOOD",
-      description: "Three principles for food preparation: no cooking required, high nutritional value and enough calories to sustain strength, long shelf life.<p>During disasters, you may have no electricity, no gas, and no time to cook. Choose ready-to-eat/cold foods. Food should include adequate protein, carbohydrates, fats, and vitamins. High-density calorie foods are necessary to maintain physical and emotional stability.</p><p>Example food items: canned food, instant noodles, self-heating meals, energy bars, nuts, sports drink powder</p>"
+      description: "<p>Due to the goal of the BOB is to help you survive for at least 72 hours (3 days) by carrying the most essential survival supplies in an emergency situation, it is the shortest preparation of 3 days.</p>"
     },
-    medical: {
-      title: "Medical Supplies",
-      category: "MEDICAL",
-      description: "<p>Core focus on self-help and mutual aid: Immediate medical care may not be available after a disaster.</p><li>Basic first aid supplies: For trauma, falls, bleeding, etc., with basic treatment capabilities</li><li>Common ailments: Such as cuts, burns, diarrhea, colds</li><li>Chronic medication: For conditions like hypertension, diabetes, asthma, etc.</li><p>*Remember to regularly check medication expiration dates and avoid storing medications in humid or high-temperature environments.</p>"
+    tool: {
+      title: "Survival Tools",
+      category: "TOOL",
+      description: "<p> Everything is prioritized to ensure survival. The tool is not for comfort, but for survival in extreme environments. </p>"
     },
-    living: {
-      title: "Living Supplies",
-      category: "LIVING",
-      description: "<p>Daily necessities are often the most easily overlooked, but can cause significant inconvenience and psychological stress. Good preparation can greatly improve cleanliness and comfort during evacuation, especially as bacteria can grow more easily in situations without water and electricity.</p><p>Choose multifunctional, lightweight, and durable items, focusing on cleaning, storage, and physiological substitutes.</p><p>Note: Prepare a 'personal hygiene kit' for each person, and separate dry and wet items into different bags/categories.</p>"
-    },
-    info: {
-      title: "Electronic Communication",
-      category: "INFORMATION",
-      description: "<p>Maintain information links and basic communication capabilities to access external information and seek help.</p><p>Having accurate information and maintaining communication capabilities is crucial during disasters. Ensure devices have multiple power sources to reduce dependence on a single power source.</p><p>Set up power-saving modes and only use electronic devices when necessary to extend power supply time.</p>"
-    },
-    tools: {
-      title: "Tools",
-      category: "TOOLS",
-      description: "<p>After a disaster, basic tools can become life-saving supplies and help adapt to harsh environments.</p><p>Prioritize multi-functionality, durability, and portability. Consider tools for repair, cutting, heating, guidance, lighting, and safety protection.</p><p>Store tools in easily accessible locations and ensure all family members know their location and basic usage.</p><p>Note: Prepare a 'personal tool kit' for each person, and separate tools into different bags/categories.</p>"
+    communication: {
+      title: "Communication & Mobility",
+      category: "COMMUNICATION",
+      description: "<p>The key to survival is the ability to obtain and contact information during evacuation or movement. It must be set in advance: communication channels, meeting points, and shelter markers.</p><li>Do not wait until the disaster occurs to set up communication channels or routes</li><li>Do not forget identity identification, so that others can know your identity, blood type, etc. in case of emergency</li><li>Do not ignore waterproof measures, must be \"over-prepared\": plastic bags, dry bags, waterproof backpacks</li>"
     }
   },
   
@@ -68,220 +45,143 @@ window.i18n.en = {
     food: {
       water: {
         name: "Water",
-        description: "3 liters of water per person per day, to properly hydrate the body",
-        note: "During disasters, each person needs 2-3 liters of drinking water per day, more may be needed in summer or high-temperature environments"
+        description: "3 liters of water, as a source of initial emergency water needs",
+        note: "Each person averages two liters of water per day, but can be reduced to one liter in an emergency, and the three-day backpack must carry three liters of clean water."
       },
-      instant_food: {
-        name: "Ready-to-eat rice, crackers, instant noodles",
-        description: "Main food provides carbohydrates as an energy source",
-        note: "Choose main foods that require no cooking or simple heating, providing basic calories"
+
+      filter: {
+        name: "Water Filter",
+        description: "With a water filter and water purification tablets, you can obtain safe drinking water from natural sources (streams, stagnant water).",
+        note: "Prepared water will always be consumed, so you still need a water filter and water purification equipment. You can buy it at an outdoor equipment store. All outdoor water filters on the market can filter bacteria and protozoa."
       },
-      protein_can: {
-        name: "Protein cans (tuna/chicken)",
-        description: "Supplement protein to maintain muscle",
-        note: "Cans have a long shelf life, at least one protein food per day to maintain strength"
+
+      hydration_bladder: {
+        name: "Hydration Bladder",
+        description: "The hydration bladder is an additional water storage tool. Once the original backup water is consumed, it can be used as a water storage item.",
+        note: "It is recommended to use a three-liter hydration bladder, which is more compact, but it is recommended to replace the drinking water and clean the hydration bladder every week to avoid bacterial growth."
       },
+
       energy_bar: {
-        name: "High calorie (energy bars/chocolate)",
-        description: "High-calorie food supplements fat and quick energy",
-        note: "High energy density, provides quick energy and psychological satisfaction"
-      },
-      electrolyte: {
-        name: "Electrolyte powder",
-        description: "Supplement electrolytes to maintain fluid balance and mental state",
-        note: "Prevent dehydration and maintain electrolyte balance, especially in cases of diarrhea or heavy sweating"
-      },
-      vitamin: {
-        name: "Multivitamin",
-        description: "Supplement various trace elements",
-        note: "Maintain nutritional balance, especially important in long-term disaster situations"
+        name: "Energy Bar",
+        description: "Carry high-calorie, no cooking food: such as military rations, energy bars, nuts. ",
+        note: "At least 2000 calories per day, prepare three days' worth. Choose lightweight, pressure-resistant, and heat-resistant packaging."
       }
     },
-    
-    medical: {
-      personal_med: {
-        name: "Personal medication",
-        description: "Prescription drugs or chronic illness medications",
-        note: "Prepare based on individual needs to ensure sufficient medication"
+
+    tool: {
+      foil_blanket: {
+        name: "Foil Blanket",
+        description: "Lightweight, reflective body temperature emergency blanket, used for cold protection, heat preservation, and thermal insulation.",
+        note: "Body temperature drop is one of the main causes of death in wilderness survival. Foil Blanket can prevent hypothermia and provide basic survival protection when encountering rain, strong winds or cold environments. It is recommended to have at least one per person."
       },
-      first_aid: {
-        name: "First-aid kit",
-        description: "Should include bandages, gauze, tape, ointment, disinfectant, etc.",
-        note: "One basic first-aid kit per person"
+      
+      emergency_tent: {
+        name: "Emergency Tent",
+        description: "Lightweight, foldable small tent, used for quick setup of temporary shelter. ",
+        note: "After a disaster, it may not be possible to enter a formal shelter. The emergency tent can provide basic survival protection against rain, wind, and cold. It is recommended to use it with a ground mat or plastic sheet to increase warmth."
       },
-      common_med: {
-        name: "Common medicines",
-        description: "Cold/fever medicine, antacids, anti-nausea/motion sickness, pain relievers, effervescent tablets, eye drops, all-purpose ointment, insect bite cream",
-        note: "One set of common medicine is sufficient, check expiration dates"
+      
+      medical_kit: {
+        name: "Medical Kit",
+        description: "Small medical kit containing first aid supplies and personal medicines to deal with minor or serious injuries and common diseases.",
+        note: "Basic medical kit should include bandages, disinfectant, and personal medication. At least prepare three days' worth, and check the expiration date every six months."
       },
+      
+      fire_starter: {
+        name: "Fire Starter",
+        description: "Includes waterproof matches, lighters, and magnesium rods, used for lighting, heating food, or lighting. ",
+        note: "Fire starter should be prepared with at least two types (lighters + magnesium rods), and it can be used for heating, boiling water, or sending out SOS signals. It is recommended to prepare at least two types of fire starters as backup, and include dry fire starters, such as cotton balls or fire starter sheets."
+      },
+      
+      knife: {
+        name: "Knife",
+        description: "Multi-purpose survival knife or tool knife, used for cutting, opening cans, repairing, and self-defense. ",
+        note: "Knife is a survival essential. It is recommended to choose a fixed blade or folding knife, and carry it with a sheath for safe carrying. Familiarize yourself with the basic operation to avoid self-injury."
+      },
+      
+      flashlight: {
+        name: "Flashlight",
+        description: "Small high-brightness flashlight, with spare batteries, used for night lighting or searching. ",
+        note: "Lighting should have a flashlight + glow stick, and it is essential for night movement or operation. It is recommended to use waterproof and impact-resistant models. You can also prepare a headlamp to free your hands and improve survival operation efficiency."
+      },
+      
+      gloves: {
+        name: "Gloves",
+        description: "Thick protective gloves, used to protect your hands when dealing with rubble, wood, or building materials. ",
+        note: "In case of injury after a disaster,thick gloves can effectively prevent cutting, wear, and burns. It is recommended to choose slip-resistant and durable materials."
+      },
+      
+      sun_hat_or_towel: {
+        name: "Sun Hat or Towel",
+        description: "Sun hat or headband, used for sun protection, cooling, and temporary bandaging. ",
+        note: "Sun exposure容易中暑或脫水。Sun hat can effectively reduce head heat, and the headband can also be used as a temporary bandage and dust mask."
+      },
+      
+      rope: {
+        name: "Rope",
+        description: "Lightweight, durable rope, used for building shelters, repairing, and pulling items. ",
+        note: "Rope is a versatile tool. It is recommended to carry 5-10 meters of heavy-duty climbing rope. It can also be used with straps to increase flexibility in tying and securing."
+      }
+    },
+    communication: {
+      mobile_phone: {
+        name: "Mobile Phone",
+        description: "It is recommended to charge the phone and put it in a zip-lock bag in case of emergency. ",
+        note: "The main phone is responsible for daily communication, and the backup phone is used to prevent the main phone from malfunctioning or not being charged. It can also be used with a power bank."
+      },
+      
+      walkie_talkie: {
+        name: "Walkie Talkie",
+        description: "In the case of a communication outage, use the amateur radio frequency to communicate with friends, suitable for short-distance communication. ",
+        note: "The general radio can be used within a range of 3-10 kilometers, depending on the terrain and obstacles. It is recommended to test the settings and channels with partners in advance."
+      },
+      
+      map: {
+        name: "Map",
+        description: "In the case of a communication outage, use the amateur radio frequency to communicate with friends, suitable for short-distance communication. ",
+        note: "The general radio can be used within a range of 3-10 kilometers, depending on the terrain and obstacles. It is recommended to test the settings and channels with partners in advance."
+      },
+      
+      id_documents: {
+        name: "ID Documents",
+        description: "Passport, ID card, important documents. ",
+        note: "Use a waterproof bag to ensure that you can present your identity, blood type, allergies, and special diseases in any situation, which is beneficial for medical and rescue registration."
+      },
+      
+      cash: {
+        name: "Cash",
+        description: "Carry a small amount of cash and coins to deal with power outages when you cannot pay with credit cards or when the ATM is not functioning.",
+        note: "It is recommended to carry paper bills (50-100 yuan) and coins, and disperse storage to avoid losing all of them."
+      },
+      
+      whistle: {
+        name: "Whistle",
+        description: "In an emergency, send out a distress signal, which should be placed on the outside of the backpack for quick use.",
+        note: "It is more effective and less labor-intensive than shouting for help. It is recommended to choose a survival whistle that has high penetration, is waterproof and drop-proof."
+      },
+      
+      radio: {
+        name: "Radio",
+        description: "Battery-powered or hand-cranked radio.",
+        note: "It is recommended to note down the local emergency channel (such as the Central Weather Bureau, local disaster prevention radio station) in advance and preset the radio to that channel. Police radio station - FM104.9 in the north and south; FM105.1 in the central part; FM101.3 in the northern area of ​​Hualien County and Taitung County; FM106.5 in the southern area of ​​Hualien County (Wuhe)"
+      },
+      
+      power_bank: {
+        name: "Power Bank",
+        description: "In an emergency, send out a distress signal, which should be placed on the outside of the backpack for quick use.",
+        note: "It is more effective and less labor-intensive than shouting for help. It is recommended to choose a survival whistle that has high penetration, is waterproof and drop-proof."
+      },
+      
+      backpack: {
+        name: "Waterproof Backpack",
+        description: "Choose a waterproof material backpack, and pair it with a plastic bag or waterproof cloth to strengthen internal item protection. ",
+        note: "In rainy or flood conditions, avoid equipment soaking, and important items (documents, electronic devices) are recommended to be double-layer waterproof packaged."
+      },
+      
       mask: {
-        name: "Masks / N95 masks",
-        description: "Protects from dust, smoke, some toxic gases",
-        note: "At least one per person per day, reusable types can reduce quantity needed"
-      },
-      tissue: {
-        name: "Toilet paper",
-        description: "Basic hygiene product",
-        note: "About 1 pack per person per 5 days"
-      },
-      pad: {
-        name: "Sanitary pads",
-        description: "Essential for female menstrual cycles",
-        note: "About 1 set per person per 30 days, can also be used as bandages in emergencies"
-      },
-      alcohol: {
-        name: "Alcohol / Disinfectant",
-        description: "For surface and wound disinfection",
-        note: "One bottle is usually enough, store safely"
-      }
-    },
-    
-    living: {
-      "blanket": {
-        "name": "Blanket",
-        "description": "Provides basic warmth and sleeping comfort",
-        "note": "Choose compact and lightweight types; consider warmth for winter"
-      },
-      "clothes": {
-        "name": "Personal clothes",
-        "description": "Changeable and insulating clothing",
-        "note": "Prepare comfortable, quick-dry, wrinkle-resistant clothing"
-      },
-      "toilet": {
-        "name": "Portable toilet",
-        "description": "Foldable portable toilet",
-        "note": "Useful in high-rise buildings or no-water situations; toilet paper counted in medical kit",
-      },
-      "gel_pad": {
-        "name": "Gel pack / Absorbent pad",
-        "description": "Mix to solidify waste, odorless and safe",
-        "note": "Can handle waste without water; use trash bags if none available"
-      },
-      "trash_bag": {
-        "name": "Trash bag",
-        "description": "For food waste, human waste, trash separation and waterproofing",
-        "note": "Large black bags can be used for waste, waterproofing, or emergency water collection"
-      },
-      "soap_sanitizer": {
-        "name": "Soap / Hand sanitizer",
-        "description": "Cleaning and disinfecting supplies",
-        "note": "Soap for cleaning tools; hand sanitizer for hand hygiene"
-      },
-      "wet_wipes": {
-        "name": "Wet wipes",
-        "description": "Basic hygiene in water-scarce situations",
-        "note": "Choose thicker types for effective cleaning"
-      },
-      "tarp_raincoat": {
-        "name": "Tarp / Raincoat",
-        "description": "Multi-functional: rain cover, mat, shelter",
-        "note": "Usable for multiple purposes such as groundsheet or shelter"
-      },
-      "water_bucket": {
-        "name": "Water bucket / Water bag",
-        "description": "Used for water storage",
-        "note": "For rainwater collection or water distribution in emergency"
-      },
-      "water_filter": {
-        "name": "Portable water filter",
-        "description": "Used to filter water",
-        "note": "Filters impurities for safer drinking water"
-      },
-      "ziplock_bag": {
-        "name": "Ziplock / Heat-resistant food bag",
-        "description": "For food preservation and separation",
-        "note": "Can be used for food storage or double as a cooking bag"
-      }
-    },
-    
-    info:  {
-      "power_bank": {
-        "name": "Power bank",
-        "description": "Charge portable electronic devices",
-        "note": "Recommended capacity over 20,000mAh, supports multiple phone charges"
-      },
-      "radio": {
-        "name": "Radio",
-        "description": "Receive emergency broadcasts and official notifications",
-        "note": "Most reliable source of information during disasters; choose multiple power sources"
-      },
-      "generator": {
-        "name": "Hand-crank / Solar generator",
-        "description": "Used for charging devices like radios and phones",
-        "note": "Often used together with radios or power banks for emergency power"
-      },
-      "spare_phone": {
-        "name": "Backup phone",
-        "description": "For emergency calls and storing offline maps",
-        "note": "Prepare an old phone with emergency contacts and offline maps; use with AirTag if needed"
-      },
-      "charging_cable": {
-        "name": "Charging cables / Adapters",
-        "description": "Charge various devices",
-        "note": "Ensure compatibility with all personal devices"
-      },
-      "whistle": {
-        "name": "Whistle / Emergency sound signal",
-        "description": "Non-electronic emergency signal tool",
-        "note": "Useful when communications are down, easy to carry"
-      },
-      "contact_card": {
-        "name": "Contact card / Message board",
-        "description": "One per person, stored with ID",
-        "note": "Used to record movements or contact family; write emergency info like blood type, chronic diseases"
-      },
-      "spare_battery": {
-        "name": "Spare batteries",
-        "description": "AA/AAA batteries for common devices",
-        "note": "Ensure radios and flashlights continue to function"
-      }
-    },
-    
-    tools: {
-      "multi_tool": {
-        "name": "Multi-tool knife",
-        "description": "Used for cutting, gripping, opening cans, etc.",
-        "note": "One of the most useful tools during disasters; choose a quality brand with common functions"
-      },
-      "headlamp": {
-        "name": "Headlamp",
-        "description": "Lighting during night or power outages",
-        "note": "LED with long battery life and moderate brightness; one per person recommended"
-      },
-      "lighter": {
-        "name": "Lighter / Waterproof matches",
-        "description": "Fire starting, lighting, cooking",
-        "note": "Waterproof lighters work in harsh environments; keep dry as backup for gas stoves"
-      },
-      "gas_stove": {
-        "name": "Cassette gas stove",
-        "description": "Used for cooking and heating food",
-        "note": "Compact and easy to use with gas canisters"
-      },
-      "gas_can": {
-        "name": "Gas canister",
-        "description": "Fuel source",
-        "note": "Boil food all at once to save fuel; one person typically uses one can in 3 days"
-      },
-      "flashlight": {
-        "name": "Flashlight / Camping lantern",
-        "description": "Lighting tool",
-        "note": "Rechargeable, hand-crank, or home/outdoor compatible lanterns recommended"
-      },
-      "compass": {
-        "name": "Compass",
-        "description": "Navigation and direction finding",
-        "note": "Choose multi-function versions with extras like rope or whistle"
-      },
-      "waterproof_map": {
-        "name": "Waterproof map",
-        "description": "Evacuation routes and resource locations",
-        "note": "Include home surroundings and evacuation zones with important points marked"
-      },
-      "gloves": {
-        "name": "Cut-resistant gloves",
-        "description": "Durable and non-slip design",
-        "note": "Protect hands during cleanup, repair, or handling debris"
+        name: "N95 Mask",
+        description: "Prepare N95-level masks, protect your respiratory system during dust, fire, or epidemic outbreaks. ",
+        note: "It is recommended to prepare 2-3 masks for each person, and store them separately in a dry zip-lock bag to prevent moisture from affecting protection."
       }
     }
   }

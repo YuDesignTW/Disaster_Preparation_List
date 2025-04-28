@@ -1,281 +1,188 @@
+// 中文語言資源檔案
 window.i18n = window.i18n || {};
 window.i18n.th = {
-  app_title: "รายการตรวจสอบการเตรียมพร้อมรับภัยพิบัติ",
-  sip_title: "พักพิงในที่ปลอดภัย (Shelter-In-Place)",
-  home_title: "ชุดฉุกเฉินสำหรับครอบครัว",
-  home_description: "เป้าหมายคือสามารถพึ่งพาตนเองได้ที่บ้านเพื่อความปลอดภัยและความอยู่รอดในระยะเวลา 7–14 วัน",
-  beta_tag: "การวางแผนเส้นทางอพยพ (BETA) ->",
-  total_progress: "ความคืบหน้าโดยรวม",
-
-  landing: {
-    main_title: "รายการตรวจสอบการเตรียมพร้อมรับภัยพิบัติ",
-    sip_button_title: "พักพิงในที่ปลอดภัย",
-    sip_button_subtitle: "ชุดฉุกเฉินสำหรับครอบครัว",
-    edc_button_title: "ของใช้ประจำวัน",
-    edc_button_subtitle: "สิ่งของจำเป็นรายวัน",
-    ghb_button_title: "กระเป๋าเดินทางกลับบ้าน",
-    ghb_button_subtitle: "กลับบ้านอย่างปลอดภัย",
-    bob_button_title: "กระเป๋าอพยพฉุกเฉิน",
-    bob_button_subtitle: "เตรียมตัวอพยพฉุกเฉิน",
-    coming_soon: "เร็ว ๆ นี้"
-  },
-
+  app_title: "รายการตรวจสอบการเตรียมพร้อมกับความพิการ",
+  sip_title: "BOB (Bug Out Bag)",
+  home_title: "กระเป๋าหนังสือรับรองความพิการ",
+  home_description: "The design goal of the BOB is to help you survive for at least 72 hours (3 days) by carrying the most essential survival supplies in an emergency situation.",
+  beta_tag: "การวาดเส้นทางหนังสือรับรองความพิการ (BETA)",
+  total_progress: "การเตรียมพร้อมกับความพิการ",
+  
+  
   common: {
-    progress: "ความคืบหน้าการเตรียม",
-    completed: "เสร็จสมบูรณ์",
+    progress: "การเตรียมพร้อมกับความพิการ",
+    completed: "สำเร็จ",
     people: "จำนวนคน",
     days: "จำนวนวัน",
     person: "คน",
     day: "วัน",
-    total: "รวมทั้งหมด",
+    total: "รวม",
     per_person: "ต่อคน",
     item: "รายการ",
     back: "กลับ",
-    prepare: "เตรียม"
+    prepare: "เตรียมพร้อม"
   },
-
+  
   categories: {
     food: {
-      title: "อาหาร",
+      title: "อาหารฉุกเฉิน",
       category: "FOOD",
-      description: "หลักการ 3 ข้อของการเตรียมอาหาร: ไม่ต้องปรุง, มีคุณค่าทางโภชนาการสูง, เก็บได้นาน<p>ในช่วงภัยพิบัติ อาจไม่มีไฟฟ้า แก๊ส หรือเวลาในการทำอาหาร เลือกอาหารที่พร้อมรับประทานหรือเย็นได้ อาหารควรมีโปรตีน คาร์โบไฮเดรต ไขมัน และวิตามินที่เพียงพอ อาหารที่มีพลังงานหนาแน่นมีความจำเป็นเพื่อรักษาความแข็งแรงทั้งทางร่างกายและจิตใจ</p><p>ตัวอย่าง: อาหารกระป๋อง บะหมี่กึ่งสำเร็จรูป อาหารอุ่นตัวเอง บาร์พลังงาน ถั่ว ผงเกลือแร่</p>"
+      description: "<p>เนื่องจากBOBมีเป้าหมายช่วยให้คุณดำเนินชีวิตได้อย่างน้อย 72 ชั่วโมง (3 วัน) โดยนำสินค้าที่สำคัญที่สุดสำหรับความพิการไปด้วย มันเป็นการเตรียมพร้อมที่สุดของ 3 วัน</p>"
     },
-    medical: {
-      title: "เวชภัณฑ์",
-      category: "MEDICAL",
-      description: "<p>การดูแลตนเองและการช่วยเหลือซึ่งกันและกันเป็นหัวใจสำคัญ: อาจไม่มีแพทย์ช่วยเหลือทันทีหลังเกิดภัยพิบัติ</p><li>อุปกรณ์ปฐมพยาบาลพื้นฐาน: รักษาบาดแผลจากอุบัติเหตุ ล้ม หรือมีเลือดออก</li><li>อาการเจ็บป่วยทั่วไป: เช่น แผล ถลอก ท้องเสีย ไข้หวัด</li><li>ยาสำหรับโรคประจำตัว: ความดันสูง เบาหวาน หอบหืด</li><p>*ควรตรวจสอบวันหมดอายุของยาเป็นประจำ และหลีกเลี่ยงการเก็บยาในที่ร้อนหรือชื้น</p>"
+    tool: {
+      title: "เครื่องมือสำหรับความพิการ",
+      category: "TOOL",
+      description: "<p> ทุกอย่างจะถูกจัดลำดับเพื่อความพิการดำเนินชีวิต เครื่องมือไม่ใช่เพื่อความสบาย แต่เพื่อความพิการในสภาพแวดล้อมที่มีความร้อนร้อน </p>"
     },
-    living: {
-      title: "ของใช้ในชีวิตประจำวัน",
-      category: "LIVING",
-      description: "<p>ของใช้ทั่วไปมักถูกมองข้าม แต่ขาดสิ่งเหล่านี้อาจสร้างความไม่สะดวกและความเครียดอย่างมาก โดยเฉพาะเมื่อไม่มีน้ำหรือไฟฟ้า</p><p>เลือกสิ่งของที่ใช้งานได้หลากหลาย น้ำหนักเบา และทนทาน ให้ความสำคัญกับความสะอาด การจัดเก็บ และสิ่งทดแทนทางร่างกาย</p><p>หมายเหตุ: จัดเตรียม 'ชุดสุขอนามัยส่วนตัว' ให้แต่ละคน และแยกของแห้งกับเปียกในถุงต่างหาก</p>"
-    },
-    info: {
-      title: "การสื่อสารอิเล็กทรอนิกส์",
-      category: "INFORMATION",
-      description: "<p>รักษาความสามารถในการเชื่อมโยงข้อมูลและสื่อสารเพื่อรับข่าวสารและขอความช่วยเหลือ</p><p>การมีข้อมูลที่ถูกต้องและการสื่อสารอย่างต่อเนื่องเป็นสิ่งสำคัญในภาวะภัยพิบัติ ตรวจสอบว่าอุปกรณ์มีแหล่งพลังงานหลากหลายเพื่อลดการพึ่งพาแหล่งเดียว</p><p>ตั้งค่าอุปกรณ์ให้อยู่ในโหมดประหยัดพลังงาน และใช้งานเฉพาะเมื่อจำเป็น เพื่อยืดระยะเวลาการใช้งาน</p>"
-    },
-    tools: {
-      title: "เครื่องมือ",
-      category: "TOOLS",
-      description: "<p>หลังเกิดภัยพิบัติ เครื่องมือพื้นฐานสามารถกลายเป็นอุปกรณ์ช่วยชีวิตได้ และช่วยให้ปรับตัวเข้ากับสิ่งแวดล้อมได้ดีขึ้น</p><p>เลือกเครื่องมือที่มีฟังก์ชันหลากหลาย ทนทาน และพกพาสะดวก พิจารณาเครื่องมือสำหรับการซ่อมแซม การตัด การให้ความร้อน การนำทาง การส่องสว่าง และความปลอดภัย</p><p>เก็บเครื่องมือไว้ในที่หยิบใช้สะดวก และให้สมาชิกทุกคนในครอบครัวรู้ตำแหน่งและวิธีใช้</p><p>หมายเหตุ: ควรจัด 'ชุดเครื่องมือส่วนตัว' สำหรับแต่ละคน และแยกเก็บตามประเภท</p>"
+    communication: {
+      title: "การสื่อสารและการเคลื่อนที่",
+      category: "COMMUNICATION",
+      description: "<p>The key to survival is the ability to obtain and contact information during evacuation or movement. It must be set in advance: communication channels, meeting points, and shelter markers.</p><li>Do not wait until the disaster occurs to set up communication channels or routes</li><li>Do not forget identity identification, so that others can know your identity, blood type, etc. in case of emergency</li><li>Do not ignore waterproof measures, must be \"over-prepared\": plastic bags, dry bags, waterproof backpacks</li>"
     }
   },
+  
   items: {
     food: {
       water: {
-        name: "น้ำดื่ม",
-        description: "น้ำ 3 ลิตรต่อคนต่อวัน เพื่อรักษาสุขภาพและการขาดน้ำ",
-        note: "ในภาวะภัยพิบัติ ควรเตรียมน้ำดื่ม 2–3 ลิตรต่อคนต่อวัน และมากกว่านี้ในช่วงหน้าร้อน"
+        name: "น้ำ",
+        description: "3 ลิตรของน้ำ เป็นแหล่งน้ำฉุกเฉินต้นฉบับ",
+        note: "คนละวันเฉลี่ยสองลิตร แต่สามารถลดเป็นหนึ่งลิตรในกรณีฉุกเฉิน และกระเป๋าหนังสือรับรองความพิการต้องนำน้ำสะอาดสามลิตร"
       },
-      instant_food: {
-        name: "ข้าวสำเร็จรูป/แครกเกอร์/บะหมี่กึ่งสำเร็จรูป",
-        description: "อาหารหลักที่ให้พลังงานจากคาร์โบไฮเดรต",
-        note: "เลือกอาหารที่ไม่ต้องปรุงหรืออุ่นง่าย เพื่อความสะดวกและรวดเร็ว"
+
+      filter: {
+        name: "ตัวกรองน้ำ",
+        description: "ด้วยตัวกรองน้ำและตัวกรองน้ำสครีบที่สามารถดูดน้ำจากแหล่งน้ำธรรมชาติ (สายน้ำ, น้ำติดชั้นดิน) ได้",
+        note: "น้ำที่เตรียมพร้อมจะถูกใช้ทั้งหมด จึงต้องมีตัวกรองน้ำและตัวกรองน้ำสครีบที่สามารถดูดน้ำจากแหล่งน้ำธรรมชาติ (สายน้ำ, น้ำติดชั้นดิน) ได้"
       },
-      protein_can: {
-        name: "อาหารกระป๋องโปรตีน (ทูน่า/ไก่)",
-        description: "เสริมโปรตีนเพื่อรักษามวลกล้ามเนื้อ",
-        note: "เก็บได้นาน ควรมีอาหารโปรตีนอย่างน้อยวันละ 1 มื้อ"
+
+      hydration_bladder: {
+        name: "Hydration Bladder",
+        description: "The hydration bladder is an additional water storage tool. Once the original backup water is consumed, it can be used as a water storage item.",
+        note: "It is recommended to use a three-liter hydration bladder, which is more compact, but it is recommended to replace the drinking water and clean the hydration bladder every week to avoid bacterial growth."
       },
+
       energy_bar: {
-        name: "อาหารให้พลังงานสูง (บาร์พลังงาน/ช็อกโกแลต)",
-        description: "ให้พลังงานอย่างรวดเร็วและไขมันสำหรับร่างกาย",
-        note: "แคลอรีหนาแน่น เหมาะสำหรับพลังงานเร่งด่วน และเสริมความสบายใจ"
-      },
-      electrolyte: {
-        name: "ผงเกลือแร่",
-        description: "ช่วยรักษาสมดุลของน้ำและเกลือแร่ในร่างกาย",
-        note: "ป้องกันการขาดน้ำ เหมาะสำหรับกรณีท้องเสียหรือเหงื่อออกมาก"
-      },
-      vitamin: {
-        name: "วิตามินรวม",
-        description: "เสริมวิตามินและแร่ธาตุที่จำเป็น",
-        note: "ช่วยรักษาความสมดุลของร่างกาย โดยเฉพาะเมื่อเกิดภัยพิบัติระยะยาว"
+        name: "Energy Bar",
+        description: "Carry high-calorie, no cooking food: such as military rations, energy bars, nuts. ",
+        note: "At least 2000 calories per day, prepare three days' worth. Choose lightweight, pressure-resistant, and heat-resistant packaging."
       }
     },
-    medical: {
-      personal_med: {
-        name: "ยาส่วนบุคคล",
-        description: "ยาตามใบสั่งแพทย์หรือยาสำหรับโรคประจำตัว",
-        note: "เตรียมตามความจำเป็นของแต่ละคน เพื่อให้มีเพียงพอในช่วงภัยพิบัติ"
+
+    tool: {
+      foil_blanket: {
+        name: "Foil Blanket",
+        description: "Lightweight, reflective body temperature emergency blanket, used for cold protection, heat preservation, and thermal insulation.",
+        note: "Body temperature drop is one of the main causes of death in wilderness survival. Foil Blanket can prevent hypothermia and provide basic survival protection when encountering rain, strong winds or cold environments. It is recommended to have at least one per person."
       },
-      first_aid: {
-        name: "ชุดปฐมพยาบาล",
-        description: "ควรมีผ้าพันแผล สำลี เทปปิดแผล ยาทา และน้ำยาฆ่าเชื้อ",
-        note: "แนะนำให้มีอย่างน้อย 1 ชุดต่อคน"
+      
+      emergency_tent: {
+        name: "Emergency Tent",
+        description: "Lightweight, foldable small tent, used for quick setup of temporary shelter. ",
+        note: "After a disaster, it may not be possible to enter a formal shelter. The emergency tent can provide basic survival protection against rain, wind, and cold. It is recommended to use it with a ground mat or plastic sheet to increase warmth."
       },
-      common_med: {
-        name: "ยาสามัญประจำบ้าน",
-        description: "ยาแก้ไข้หวัด/ลดไข้ ยาแก้ปวดท้อง ยาแก้เวียนหัว ยาแก้ปวด ยาฟู่ต้านพิษ ยาหยอดตา ยาทาผื่น ยาแก้แมลงกัดต่อย",
-        note: "ชุดเดียวก็เพียงพอสำหรับหลายคน ควรตรวจสอบวันหมดอายุเสมอ"
+      
+      medical_kit: {
+        name: "Medical Kit",
+        description: "Small medical kit containing first aid supplies and personal medicines to deal with minor or serious injuries and common diseases.",
+        note: "Basic medical kit should include bandages, disinfectant, and personal medication. At least prepare three days' worth, and check the expiration date every six months."
       },
-      mask: {
-        name: "หน้ากากอนามัย / หน้ากาก N95",
-        description: "ป้องกันฝุ่น ควัน และแก๊สบางประเภท",
-        note: "อย่างน้อย 1 ชิ้นต่อคนต่อวัน หรือใช้แบบซักได้เพื่อลดจำนวน"
+      
+      fire_starter: {
+        name: "Fire Starter",
+        description: "Includes waterproof matches, lighters, and magnesium rods, used for lighting, heating food, or lighting. ",
+        note: "Fire starter should be prepared with at least two types (lighters + magnesium rods), and it can be used for heating, boiling water, or sending out SOS signals. It is recommended to prepare at least two types of fire starters as backup, and include dry fire starters, such as cotton balls or fire starter sheets."
       },
-      tissue: {
-        name: "กระดาษชำระ",
-        description: "ใช้เพื่อความสะอาดส่วนตัว",
-        note: "ประมาณ 1 ม้วนต่อคนทุก 5 วัน"
+      
+      knife: {
+        name: "Knife",
+        description: "Multi-purpose survival knife or tool knife, used for cutting, opening cans, repairing, and self-defense. ",
+        note: "Knife is a survival essential. It is recommended to choose a fixed blade or folding knife, and carry it with a sheath for safe carrying. Familiarize yourself with the basic operation to avoid self-injury."
       },
-      pad: {
-        name: "ผ้าอนามัย",
-        description: "จำเป็นสำหรับผู้หญิงในช่วงมีประจำเดือน",
-        note: "ประมาณ 1 ชุดต่อคนต่อ 30 วัน และสามารถใช้เป็นผ้าก๊อซในยามฉุกเฉินได้"
-      },
-      alcohol: {
-        name: "แอลกอฮอล์ / น้ำยาฆ่าเชื้อ",
-        description: "ใช้ทำความสะอาดบาดแผลหรืออุปกรณ์",
-        note: "1 ขวดก็เพียงพอในหลายกรณี ควรเก็บให้พ้นมือเด็ก"
-      }
-    },
-    living: {
-      blanket: {
-        name: "ผ้าห่ม",
-        description: "ให้ความอบอุ่นพื้นฐานและความสะดวกสบายขณะนอนหลับ",
-        note: "ควรเลือกแบบเบา พับเก็บง่าย และให้ความอบอุ่นในช่วงฤดูหนาว"
-      },
-      clothes: {
-        name: "เสื้อผ้าส่วนตัว",
-        description: "เสื้อผ้าสำรองสำหรับเปลี่ยนและป้องกันความหนาว",
-        note: "แนะนำให้เตรียมเสื้อผ้าที่แห้งไว ระบายอากาศ และไม่ยับง่าย"
-      },
-      toilet: {
-        name: "สุขาเคลื่อนที่",
-        description: "สุขาแบบพับเก็บได้ ใช้ในกรณีไม่มีน้ำ",
-        note: "เหมาะสำหรับอยู่ชั้นสูงหรือสถานการณ์ไม่มีน้ำ ชุดนี้ไม่รวมกระดาษชำระ"
-      },
-      gel_pad: {
-        name: "เจลดูดซับ / แผ่นซับของเสีย",
-        description: "ช่วยจับของเสียให้แข็งตัว ปลอดกลิ่นและปลอดภัย",
-        note: "ใช้เมื่อไม่มีน้ำ สามารถใช้ถุงขยะแทนได้หากไม่มี"
-      },
-      trash_bag: {
-        name: "ถุงขยะ",
-        description: "ใช้แยกขยะ อาหารเสีย ของเสีย และใช้เป็นถุงกันน้ำฉุกเฉิน",
-        note: "ถุงดำขนาดใหญ่สามารถใช้เก็บของเสีย กันน้ำ หรือใช้ใส่ในสุขาเคลื่อนที่ได้"
-      },
-      soap_sanitizer: {
-        name: "สบู่ / เจลล้างมือ",
-        description: "ทำความสะอาดมือและอุปกรณ์",
-        note: "สบู่ใช้กับภาชนะ เจลใช้ทำความสะอาดมือเมื่อไม่มีน้ำ"
-      },
-      wet_wipes: {
-        name: "ผ้าเปียก",
-        description: "ทำความสะอาดพื้นฐานเมื่อไม่มีน้ำ",
-        note: "เลือกชนิดหนาเพื่อให้เช็ดได้ทั่วถึง"
-      },
-      tarp_raincoat: {
-        name: "ผ้าใบกันน้ำ / เสื้อกันฝน",
-        description: "ใช้กันฝน ปูพื้น หรือบังแดด",
-        note: "มีประโยชน์หลายอย่าง เช่น ใช้แทนเต็นท์ ชั่วคราวหรือเป็นฉากกั้น"
-      },
-      water_bucket: {
-        name: "ถังน้ำ / ถุงเก็บน้ำ",
-        description: "ใช้เก็บน้ำดื่มหรือรับน้ำจากภาครัฐ",
-        note: "สามารถใช้รองน้ำฝนหรือเก็บน้ำฉุกเฉินได้"
-      },
-      water_filter: {
-        name: "เครื่องกรองน้ำแบบพกพา",
-        description: "ใช้กรองสิ่งสกปรกออกจากน้ำ",
-        note: "เพื่อให้ได้น้ำดื่มที่ปลอดภัยในกรณีฉุกเฉิน"
-      },
-      ziplock_bag: {
-        name: "ถุงซิปล็อก / ถุงทนความร้อน",
-        description: "ใช้เก็บและแยกอาหาร",
-        note: "สามารถใช้เก็บอาหารหรือใช้ต้มอุ่นอาหารได้"
-      }
-    },
-    info: {
-      power_bank: {
-        name: "แบตเตอรี่สำรอง",
-        description: "สำหรับชาร์จอุปกรณ์อิเล็กทรอนิกส์",
-        note: "ควรเลือกความจุ 20,000mAh ขึ้นไป สามารถชาร์จมือถือได้หลายครั้ง"
-      },
-      radio: {
-        name: "วิทยุ",
-        description: "ใช้รับฟังประกาศฉุกเฉินและข้อมูลจากทางการ",
-        note: "เป็นแหล่งข้อมูลที่น่าเชื่อถือที่สุดในช่วงภัยพิบัติ เลือกแบบมีหลายแหล่งพลังงาน"
-      },
-      generator: {
-        name: "เครื่องกำเนิดไฟฟ้าแบบมือหมุน/พลังงานแสงอาทิตย์",
-        description: "ใช้จ่ายไฟให้กับวิทยุ โทรศัพท์ และอุปกรณ์อื่น ๆ",
-        note: "มักใช้ร่วมกับวิทยุหรือแบตเตอรี่สำรอง มีประโยชน์ในภาวะไม่มีไฟฟ้า"
-      },
-      spare_phone: {
-        name: "โทรศัพท์สำรอง",
-        description: "สำหรับโทรฉุกเฉินและใช้แผนที่แบบออฟไลน์",
-        note: "เตรียมโทรศัพท์เครื่องเก่า บันทึกเบอร์ติดต่อฉุกเฉิน และดาวน์โหลดแผนที่ออฟไลน์ไว้ล่วงหน้า"
-      },
-      charging_cable: {
-        name: "สายชาร์จ / อะแดปเตอร์",
-        description: "เชื่อมต่ออุปกรณ์สำหรับการชาร์จ",
-        note: "เตรียมสายชาร์จที่ตรงกับอุปกรณ์ของคุณทุกประเภท"
-      },
-      whistle: {
-        name: "นกหวีด / อุปกรณ์ขอความช่วยเหลือ",
-        description: "อุปกรณ์ขอความช่วยเหลือแบบไม่ใช้ไฟฟ้า",
-        note: "เหมาะในสถานการณ์ที่ไม่มีสัญญาณสื่อสาร พกพาง่าย"
-      },
-      contact_card: {
-        name: "บัตรข้อมูลฉุกเฉิน / กระดานฝากข้อความ",
-        description: "ควรมีติดตัวพร้อมบัตรประชาชน 1 ใบต่อคน",
-        note: "ใช้แจ้งตำแหน่ง ฝากข้อความ หรือบันทึกข้อมูลสำคัญ เช่น เบอร์โทร เลือด โรคประจำตัว"
-      },
-      spare_battery: {
-        name: "ถ่านไฟฉายสำรอง",
-        description: "ถ่าน AA/AAA สำหรับใช้งานกับวิทยุ ไฟฉาย ฯลฯ",
-        note: "ช่วยให้ใช้อุปกรณ์ได้ต่อเนื่องในกรณีไฟดับ"
-      }
-    },
-    tools: {
-      multi_tool: {
-        name: "มีดอเนกประสงค์",
-        description: "สามารถใช้ตัด จับ เปิดกระป๋อง และฟังก์ชันอื่น ๆ",
-        note: "เป็นหนึ่งในเครื่องมือที่มีประโยชน์ที่สุดในสถานการณ์ภัยพิบัติ ควรเลือกยี่ห้อที่เชื่อถือได้และฟังก์ชันครบ"
-      },
-      headlamp: {
-        name: "ไฟฉายคาดหัว",
-        description: "ให้แสงสว่างในช่วงกลางคืนหรือเมื่อไฟดับ",
-        note: "ควรใช้แบบ LED ที่ใช้งานได้นานและสว่างพอเหมาะ แนะนำให้มีคนละหนึ่งอัน"
-      },
-      lighter: {
-        name: "ไฟแช็ก / ไม้ขีดกันน้ำ",
-        description: "ใช้จุดไฟ ส่องสว่าง หรือทำอาหาร",
-        note: "แนะนำให้ใช้ไฟแช็กแบบกันน้ำและเก็บให้แห้ง ใช้เป็นสำรองเมื่อเตาแก๊สใช้ไม่ได้"
-      },
-      gas_stove: {
-        name: "เตาแก๊สพกพา",
-        description: "ใช้ปรุงอาหารและอุ่นอาหาร",
-        note: "สามารถพับเก็บได้ ใช้ร่วมกับกระป๋องแก๊สขนาดเล็กได้สะดวก"
-      },
-      gas_can: {
-        name: "กระป๋องแก๊ส",
-        description: "ใช้เป็นแหล่งเชื้อเพลิง",
-        note: "ควรปรุงอาหารในครั้งเดียวเพื่อลดการใช้เชื้อเพลิง ปกติ 1 คนใช้ 1 กระป๋องต่อ 3 วัน"
-      },
+      
       flashlight: {
-        name: "ไฟฉาย / โคมไฟแคมป์",
-        description: "อุปกรณ์ให้แสงสว่าง",
-        note: "เลือกแบบชาร์จได้หรือหมุนมือ หรือแบบที่ใช้ได้ทั้งในบ้านและกลางแจ้ง"
+        name: "Flashlight",
+        description: "Small high-brightness flashlight, with spare batteries, used for night lighting or searching. ",
+        note: "Lighting should have a flashlight + glow stick, and it is essential for night movement or operation. It is recommended to use waterproof and impact-resistant models. You can also prepare a headlamp to free your hands and improve survival operation efficiency."
       },
-      compass: {
-        name: "เข็มทิศ",
-        description: "ใช้ระบุตำแหน่งและทิศทาง",
-        note: "แนะนำใช้แบบอเนกประสงค์ที่รวมเชือก นกหวีด หรืออุปกรณ์อื่น"
-      },
-      waterproof_map: {
-        name: "แผนที่กันน้ำ",
-        description: "ใช้ดูเส้นทางอพยพและตำแหน่งทรัพยากร",
-        note: "ควรแสดงบริเวณรอบบ้าน จุดอพยพ และจุดสำคัญที่ควรรู้"
-      },
+      
       gloves: {
-        name: "ถุงมือกันบาดหนา",
-        description: "วัสดุกันลื่น ทนทานต่อการขูดขีด",
-        note: "ใช้เมื่อเก็บเศษซาก ปรับปรุงพื้นที่ หรือทำงานซ่อมบำรุง"
+        name: "Gloves",
+        description: "Thick protective gloves, used to protect your hands when dealing with rubble, wood, or building materials. ",
+        note: "In case of injury after a disaster,thick gloves can effectively prevent cutting, wear, and burns. It is recommended to choose slip-resistant and durable materials."
+      },
+      
+      sun_hat_or_towel: {
+        name: "Sun Hat or Towel",
+        description: "Sun hat or headband, used for sun protection, cooling, and temporary bandaging. ",
+        note: "Sun exposure容易中暑或脫水。Sun hat can effectively reduce head heat, and the headband can also be used as a temporary bandage and dust mask."
+      },
+      
+      rope: {
+        name: "Rope",
+        description: "Lightweight, durable rope, used for building shelters, repairing, and pulling items. ",
+        note: "Rope is a versatile tool. It is recommended to carry 5-10 meters of heavy-duty climbing rope. It can also be used with straps to increase flexibility in tying and securing."
       }
     },
+    communication: {
+      mobile_phone: {
+        name: "Mobile Phone",
+        description: "It is recommended to charge the phone and put it in a zip-lock bag in case of emergency. ",
+        note: "The main phone is responsible for daily communication, and the backup phone is used to prevent the main phone from malfunctioning or not being charged. It can also be used with a power bank."
+      },
+      
+      walkie_talkie: {
+        name: "Walkie Talkie",
+        description: "In the case of a communication outage, use the amateur radio frequency to communicate with friends, suitable for short-distance communication. ",
+        note: "The general radio can be used within a range of 3-10 kilometers, depending on the terrain and obstacles. It is recommended to test the settings and channels with partners in advance."
+      },
+      
+      map: {
+        name: "Map",
+        description: "In the case of a communication outage, use the amateur radio frequency to communicate with friends, suitable for short-distance communication. ",
+        note: "The general radio can be used within a range of 3-10 kilometers, depending on the terrain and obstacles. It is recommended to test the settings and channels with partners in advance."
+      },
+      
+      id_documents: {
+        name: "ID Documents",
+        description: "Passport, ID card, important documents. ",
+        note: "Use a waterproof bag to ensure that you can present your identity, blood type, allergies, and special diseases in any situation, which is beneficial for medical and rescue registration."
+      },
+      
+      cash: {
+        name: "Cash",
+        description: "Carry a small amount of cash and coins to deal with power outages when you cannot pay with credit cards or when the ATM is not functioning.",
+        note: "It is recommended to carry paper bills (50-100 yuan) and coins, and disperse storage to avoid losing all of them."
+      },
+      
+      whistle: {
+        name: "Whistle",
+        description: "In an emergency, send out a distress signal, which should be placed on the outside of the backpack for quick use.",
+        note: "It is more effective and less labor-intensive than shouting for help. It is recommended to choose a survival whistle that has high penetration, is waterproof and drop-proof."
+      },
+      
+      radio: {
+        name: "Radio",
+        description: "Battery-powered or hand-cranked radio.",
+        note: "It is recommended to note down the local emergency channel (such as the Central Weather Bureau, local disaster prevention radio station) in advance and preset the radio to that channel. Police radio station - FM104.9 in the north and south; FM105.1 in the central part; FM101.3 in the northern area of ​​Hualien County and Taitung County; FM106.5 in the southern area of ​​Hualien County (Wuhe)"
+      },
+      
+      power_bank: {
+        name: "Power Bank",
+        description: "In an emergency, send out a distress signal, which should be placed on the outside of the backpack for quick use.",
+        note: "It is more effective and less labor-intensive than shouting for help. It is recommended to choose a survival whistle that has high penetration, is waterproof and drop-proof."
+      },
+      
+      backpack: {
+        name: "Waterproof Backpack",
+        description: "Choose a waterproof material backpack, and pair it with a plastic bag or waterproof cloth to strengthen internal item protection. ",
+        note: "In rainy or flood conditions, avoid equipment soaking, and important items (documents, electronic devices) are recommended to be double-layer waterproof packaged."
+      },
+      
+      mask: {
+        name: "N95 Mask",
+        description: "Prepare N95-level masks, protect your respiratory system during dust, fire, or epidemic outbreaks. ",
+        note: "It is recommended to prepare 2-3 masks for each person, and store them separately in a dry zip-lock bag to prevent moisture from affecting protection."
+      }
+    }
   }
-};
+}; 
