@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOB 緊急撤離包 - 介紹</title>
+    <style>
+        /* 全局樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #F23921, #F27E21);
+            background-attachment: fixed;
+        }
+
+        /* 主容器 */
+        .intro-container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* 左側區域 */
+        .left-section {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .left-image-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 左側圖片一特殊處理 */
+        .left-image-1-container {
+            height: 150%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInDown 2.5s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .left-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .left-image-1 {
+            max-width: 150%;
+            max-height: 150%;
+            object-fit: contain;
+        }
+
+        .left-image-2-container {
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .limited-collab {
+            font-size: 12px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        /* 中間主要內容區 */
+        .main-content {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .main-image {
+            width: 100%;
+            max-height: 40vh;
+            object-fit: contain;
+            margin-bottom: 30px;
+        }
+
+        .content-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .content-subtitle {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .content-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .start-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            color: #F23921;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            text-align: center;
+            align-self: flex-start;
+        }
+
+        .start-button:hover {
+            background-color: #F23921;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* 右側動畫區 */
+        .right-section {
+            width: 25%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .marquee {
+            position: absolute;
+            width: 100%;
+            height: 200%;
+            display: flex;
+            flex-direction: column;
+            animation: scrollUp 20s linear infinite;
+            right: 0;
+        }
+
+        .marquee-item {
+            height: 100%;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .marquee-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* 手機版跑馬燈動畫，從中央開始 */
+        @keyframes scrollRightMobile {
+            0% {
+                transform: translateX(-25%);
+            }
+            100% {
+                transform: translateX(-75%);
+            }
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 1024px) {
+            .intro-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-section, .main-content, .right-section {
+                width: 100%;
+                height: auto;
+            }
+
+            .left-section {
+                flex-direction: column;
+                padding: 20px;
+                position: relative;
+            }
+
+            .left-image-1-container {
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .left-image-1 {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .left-image-2-container {
+                position: fixed;
+                bottom: 10px;
+                left: 0;
+                width: 100%;
+                height: auto;
+                z-index: 100;
+            }
+
+            .main-content {
+                padding: 30px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .content-title, .content-subtitle, .content-description {
+                text-align: center;
+            }
+
+            .start-button {
+                align-self: center;
+            }
+
+            .right-section {
+                height: 150px;
+                margin-bottom: 80px;
+                width: 100%;
+                justify-content: center;
+                overflow-x: hidden;
+            }
+
+            .marquee {
+                flex-direction: row;
+                height: 100%;
+                width: 350%;
+                animation: scrollRightMobile 25s linear infinite;
+                right: auto;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .marquee-item {
+                height: 100%;
+                width: 45%;
+                margin-right: 5%;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .marquee-image {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: 130px;
+                object-fit: contain;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left-section {
+                flex-direction: column;
+                padding: 20px;
+                height: auto;
+            }
+
+            .left-image-container {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .content-subtitle {
+                font-size: 20px;
+            }
+
+            .left-image-2-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .left-image-2-container img {
+                max-width: 50%;
+                margin-right: 10px;
+            }
+
+            .limited-collab {
+                font-size: 12px;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+        <!-- 左側區域 -->
+        <div class="left-section">
+            <div class="left-image-1-container">
+                <img src="images/left-image-1.png" alt="左側圖片一" class="left-image-1">
+            </div>
+            <div class="left-image-2-container">
+                <img src="images/left-image-2.png" alt="左側圖片二" class="left-image">
+                <div class="limited-collab">期間限定合作</div>
+            </div>
+        </div>
+
+        <!-- 中間主要內容區 -->
+        <div class="main-content">
+            <h1 class="content-title">緊急撤離包</h1>
+            <h2 class="content-subtitle">BOB (Bug Out Bag)</h2>
+            <p class="content-description">
+                撤離包（BOB）的設計目的是在緊急情況下，讓你能快速攜帶最必要的生存物資，自力生存至少72小時（3天）。
+            </p>
+            <a href="index.html" class="start-button">開始準備</a>
+        </div>
+
+        <!-- 右側動畫區 -->
+        <div class="right-section">
+            <div class="marquee">
+                <!-- 跑馬燈圖片，將重複顯示以實現連續滾動效果 -->
+                <div class="marquee-item">
+                    <img src="images/marquee-1.png" alt="跑馬燈圖片1" class="marquee-image">
+                </div>
+                <div class="marquee-item">
+                    <img src="images/marquee-2.png" alt="跑馬燈圖片2" class="marquee-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 頁面載入動畫效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 這裡可以添加更多的頁面載入動畫邏輯
+            console.log('Intro page loaded');
+            
+            // 根據螢幕寬度替換跑馬燈圖片
+            function updateMarqueeImages() {
+                const isMobile = window.innerWidth <= 1024;
+                const marqueeImages = document.querySelectorAll('.marquee-image');
+                
+                if (isMobile) {
+                    marqueeImages[0].src = 'images/mobile_marquee-1.png';
+                    marqueeImages[1].src = 'images/mobile_marquee-2.png';
+                } else {
+                    marqueeImages[0].src = 'images/marquee-1.png';
+                    marqueeImages[1].src = 'images/marquee-2.png';
+                }
+            }
+            
+            // 初始運行一次
+            updateMarqueeImages();
+            
+            // 監聽視窗大小變化
+            window.addEventListener('resize', updateMarqueeImages);
+        });
+    </script>
+</body>
+</html> 

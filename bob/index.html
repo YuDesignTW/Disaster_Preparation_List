@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災避難準備清冊</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="frame">
+        <!-- 中央内容区 (在電腦版中置左) -->
+        <div class="center-content">
+            <div class="center-content-left">
+                <div class="sip-title">BOB (Bug Out Bag)</div>
+                <h1>緊急撤離包</h1>
+                <p class="description">撤離包（BOB）的設計目的是在緊急情況下，讓你能快速攜帶最必要的生存物資，自力生存至少72小時（3天）。</p>
+                
+                <!-- 設置區域，從詳情頁移到這裡 -->
+                <div class="settings-area">
+                    <button class="settings-button people-setting">
+                        準備人數：<span>1人</span>
+                    </button>
+                    <button class="settings-button days-setting" style="display: none;">
+                        天數：<span>3天</span>
+                    </button>
+                </div>
+                
+                <div class="center-bottom">
+                    <div class="beta-tag">
+                        <a href="evacuation-map/evacuate.html" class="beta-link">逃難路徑規劃 (BETA) -></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center-content-right">
+                <div class="total-progress-container">
+                    <div class="total-progress-circle">
+                        <svg width="145" height="145" viewBox="0 0 145 145">
+                            <circle class="total-progress-circle-bg" cx="72.5" cy="72.5" r="65" fill="none" stroke-width="14"></circle>
+                            <circle class="total-progress-circle-fill" cx="72.5" cy="72.5" r="65" fill="none" stroke-width="14" stroke-dasharray="408.4" stroke-dashoffset="408.4"></circle>
+                        </svg>
+                        <div class="total-progress-percentage">0%</div>
+                    </div>
+                    <div class="total-progress-text">準備總進度</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右側區塊容器 (在電腦版中水平排列) -->
+        <div class="right-blocks-container">
+            <!-- 糧食區塊 -->
+            <div class="food-block" data-category="01" data-title="緊急糧食">
+                <div class="text-content">
+                    <div class="number">01</div>
+                    <div class="category">FOOD</div>
+                    <div class="title">緊急糧食</div>
+                </div>
+                <div class="icon-group">
+                    <img src="images/01.png" alt="水" class="icon">
+                </div>
+            </div>
+            
+            <!-- 求生工具區塊 -->
+            <div class="tool-block" data-category="02" data-title="求生工具">
+                <div class="text-content">
+                    <div class="number">02</div>
+                    <div class="category">TOOL</div>
+                    <div class="title">求生工具</div>
+                </div>
+                <div class="icon-group">
+                    <img src="images/03.png" alt="求生" class="icon">
+                </div>
+            </div>
+            
+            <!-- 生活用品區塊 -->
+            <div class="communication-block" data-category="03" data-title="通訊移動">
+                <div class="text-content">
+                    <div class="number">03</div>
+                    <div class="category">COMMUNICATION</div>
+                    <div class="title">通訊移動</div>
+                </div>
+                <div class="icon-group">
+                    <img src="images/02.png" alt="通訊" class="icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 详情页面 - 糧食 -->
+    <div id="detail-01" class="detail-page">
+        <div class="detail-left">
+            <div class="detail-header">
+                <div class="detail-number">01</div>
+                <div class="detail-category">FOOD</div>
+                <div class="detail-title">糧食</div>
+            </div>
+            <div class="detail-description">
+                <p>食物準備的三大原則：不需烹煮、營養價值高熱量夠支撐體力、可存放時間長。</p>
+                <p>災難發生時可能無電、無瓦斯、無時間煮食，選擇即食/冷食可用為主。食物需適量蛋白質、碳水、脂肪、維生素，須備高密度熱量食物才能維持身體與情緒穩定。</p>
+                <p>範例食物品項：罐頭、即食麵類、自熱飯、能量棒、堅果、運動飲料粉</p>
+            </div>
+        </div>
+        <div class="detail-right">
+            <div class="progress-bar">
+                <span class="progress-text">準備進度</span>
+                <span class="progress-count">0 / 6</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <button class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12H19"></path>
+                    <path d="M12 5l-7 7 7 7"></path>
+                </svg>
+            </button>
+            <div class="checklist">
+                <div class="checklist-header">
+                    <span class="col-checkbox"></span>
+                    <span class="col-item">項目</span>
+                    <span class="col-per-person">每人所需</span>
+                    <span class="col-people">人數</span>
+                    <span class="col-days">天數</span>
+                    <span class="col-total">總計</span>
+                </div>
+                <div class="checklist-divider"></div>
+                <!-- 食物項目清單將由JavaScript動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 详情页面 - 醫療衛生 -->
+    <div id="detail-02" class="detail-page">
+        <div class="detail-left">
+            <div class="detail-header">
+                <div class="detail-number">02</div>
+                <div class="detail-category">TOOL</div>
+                <div class="detail-title">求生工具</div>
+            </div>
+            <div class="detail-description">
+                <p>以自救與互救核心：災難發生後可能無法立即就醫。</p>
+                <li>基本急救用品 : 對應外傷、跌倒、出血等狀況，具備初步處理能力</li>
+                <li>常見病症 : 例如割傷、燒燙傷、腹瀉、感冒</li>
+                <li>慢性病藥物 : 例如高血壓、糖尿病、氣喘等患者</li>
+                <p>*記得定期檢查藥物有效期，避免藥物存放在潮濕或高溫環境。</p>
+            </div>
+        </div>
+        <div class="detail-right">
+            <div class="progress-bar">
+                <span class="progress-text">準備進度</span>
+                <span class="progress-count">0 / 6</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <button class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12H19"></path>
+                    <path d="M12 5l-7 7 7 7"></path>
+                </svg>
+            </button>
+            <div class="checklist">
+                <div class="checklist-header">
+                    <span class="col-checkbox"></span>
+                    <span class="col-item">項目</span>
+                    <span class="col-per-person">每人所需</span>
+                    <span class="col-people">人數</span>
+                    <span class="col-days">天數</span>
+                    <span class="col-total">總計</span>
+                </div>
+                <div class="checklist-divider"></div>
+                <!-- 醫療衛生項目清單將由JavaScript動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 详情页面 - 生活用品 -->
+    <div id="detail-03" class="detail-page">
+        <div class="detail-left">
+            <div class="detail-header">
+                <div class="detail-number">03</div>
+                <div class="detail-category">LIVING</div>
+                <div class="detail-title">生活用品</div>
+            </div>
+            <div class="detail-description">
+                <p>日常用品類常常是最容易忽略、但最容易造成生活不便與心理壓力的部分。良好的準備能大幅提升避難時的清潔、舒適感，尤其在缺水、斷電的狀況下病菌更容易滋生。</p>
+                <p>選擇多功能、輕便且耐用的物品，以清潔、收納、生理替代品。</p>
+                <p>備註 : 可為每人準備「個人清潔包」、乾濕物品分袋／分類放置。</p>
+            </div>
+        </div>
+        <div class="detail-right">
+            <div class="progress-bar">
+                <span class="progress-text">準備進度</span>
+                <span class="progress-count">0 / 6</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <button class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12H19"></path>
+                    <path d="M12 5l-7 7 7 7"></path>
+                </svg>
+            </button>
+            <div class="checklist">
+                <div class="checklist-header">
+                    <span class="col-checkbox"></span>
+                    <span class="col-item">項目</span>
+                    <span class="col-per-person">每人所需</span>
+                    <span class="col-people">人數</span>
+                    <span class="col-days">天數</span>
+                    <span class="col-total">總計</span>
+                </div>
+                <div class="checklist-divider"></div>
+                <!-- 生活用品項目清單將由JavaScript動態生成 -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 添加新的統一資料檔案和語言資源 -->
+    <script src="locales/zh.js"></script>
+    <script src="locales/en.js"></script>
+    <script src="locales/ja.js"></script>
+    <script src="locales/th.js"></script>
+    <script src="app-data.js"></script>
+    <script src="locale.js"></script>
+    <script src="analytics.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // 初始化Google Analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.Analytics) {
+                Analytics.init();
+                // 跟踪主页面浏览
+                Analytics.pageView();
+            }
+        });
+    </script>
+</body>
+</html> 
