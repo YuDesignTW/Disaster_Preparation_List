@@ -39,14 +39,14 @@ window.appData = {
         quantity: 1,
         unit: "L",
         scaling: "people_days",
-        link: "https://s.shopee.tw/LZsATh8Rc"
+        link: "https://s.shopee.tw/LaFhgSfLi"
       },
       {
         key: "filter",
         quantity: 1,
         unit: "份",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/2LLK5PJDnM"
       },
       {
         key: "hydration_bladder",
@@ -60,7 +60,7 @@ window.appData = {
         quantity: 1,
         unit: "份",
         scaling: "people_days",
-        link: "https://s.shopee.tw/9KUgsdW2eP"
+        link: "https://s.shopee.tw/1VmD5kzVjx"
       },
     ],
     
@@ -71,28 +71,28 @@ window.appData = {
         quantity: 1,
         unit: "條",
         scaling: "people",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/8pYkbgSPOt"
       },
       {
         key: "emergency_tent",
         quantity: 1,
         unit: "頂",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/xM5gXMOR"
       },
       {
         key: "medical_kit",
         quantity: 1,
         unit: "套",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/9KV1D1GD0b"
       },
       {
         key: "fire_starter",
         quantity: 2,
         unit: "個",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/5AfVSkwghV"
       },
       {
         key: "knife",
@@ -106,28 +106,28 @@ window.appData = {
         quantity: 1,
         unit: "支",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/2LLGseu2tf"
       },
       {
         key: "gloves",
         quantity: 1,
         unit: "雙",
         scaling: "people",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/8KcXEWPZRv"
       },
       {
         key: "sun_hat_or_towel",
         quantity: 1,
         unit: "頂",
         scaling: "people",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/30b0snLmtm"
       },
       {
         key: "rope",
         quantity: 1,
         unit: "捆",
         scaling: "none",
-        link: "https://s.shopee.tw/5KyY6xg9Ja"
+        link: "https://s.shopee.tw/4AmyGc3QUI"
       }
     ],
     
@@ -138,70 +138,68 @@ window.appData = {
         "quantity": 2,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
       },
       {
         "key": "walkie_talkie",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/3fqhg3idL3"
       },
       {
         "key": "map",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/2VekHvzs0X"
       },
       {
         "key": "id_documents",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
       },
       {
         "key": "cash",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/3qA7sLe0GN"
       },
       {
         "key": "whistle",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/10pwVCvYq2"
       },
       {
         "key": "radio",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/AKNbVi4d7q"
       },
       {
         "key": "power_bank",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/7fMqR3pDVM"
       },
       {
         "key": "backpack",
         "quantity": 1,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/6AY2el5tFw"
       },
       {
         "key": "mask",
         "quantity": 3,
         "unit": "個",
         "scaling": "none",
-        "link": "https://s.shopee.tw/5KyY6xg9Ja"
+        "link": "https://s.shopee.tw/7zzgq9cRqW"
       }
     ]
     
