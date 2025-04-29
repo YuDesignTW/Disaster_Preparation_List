@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>防災避難準備清冊</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 添加新的統一資料檔案和語言資源 -->
+    <script src="locales/zh.js"></script>
+    <script src="locales/en.js"></script>
+    <script src="locales/ja.js"></script>
+    <script src="locales/th.js"></script>
+    <script src="app-data.js"></script>
+    <script src="locale.js"></script>
+    <script src="analytics.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="frame">
@@ -223,20 +232,24 @@
         </div>
     </div>
 
-
-    <!-- 添加新的統一資料檔案和語言資源 -->
-    <script src="locales/zh.js"></script>
-    <script src="locales/en.js"></script>
-    <script src="locales/ja.js"></script>
-    <script src="locales/th.js"></script>
-    <script src="app-data.js"></script>
-    <script src="locale.js"></script>
-    <script src="analytics.js"></script>
-    <script src="script.js"></script>
-    
     <script>
         // 初始化Google Analytics
         document.addEventListener('DOMContentLoaded', function() {
+            // 初始化語言管理器
+            if (window.LocaleManager) {
+                window.LocaleManager.init();
+                // 確保從 localStorage 讀取語言設定
+                const savedLocale = localStorage.getItem('preferredLocale');
+                if (savedLocale) {
+                    window.LocaleManager.setLocale(savedLocale);
+                }
+                
+                // 監聽語言變更事件
+                window.addEventListener('languageChanged', function(e) {
+                    window.LocaleManager.setLocale(e.detail.to);
+                });
+            }
+            
             if (window.Analytics) {
                 Analytics.init();
                 // 跟踪主页面浏览

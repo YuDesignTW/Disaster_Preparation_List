@@ -4,25 +4,23 @@ const LocaleManager = {
   supportedLocales: ['zh', 'en', 'ja', 'th'],
   
   init() {
-    // 檢查localStorage是否已有語言設定
-    const savedLocale = localStorage.getItem('locale');
-    if (savedLocale && this.supportedLocales.includes(savedLocale)) {
+    // 從 localStorage 讀取語言設定
+    const savedLocale = localStorage.getItem('preferredLocale');
+    if (savedLocale) {
       this.currentLocale = savedLocale;
+      document.documentElement.lang = savedLocale;
     } else {
-      // 檢查瀏覽器語言
+      // 如果沒有保存的設定，使用瀏覽器語言
       const browserLang = navigator.language.split('-')[0];
-      if (this.supportedLocales.includes(browserLang)) {
-        this.currentLocale = browserLang;
-      }
+      this.currentLocale = this.supportedLocales.includes(browserLang) ? browserLang : 'zh';
+      localStorage.setItem('preferredLocale', this.currentLocale);
+      document.documentElement.lang = this.currentLocale;
     }
     
-    // 更新HTML lang屬性
-    document.documentElement.lang = this.currentLocale;
-    
-    // 初始載入文字
+    // 更新所有文字
     this.updateAllTexts();
     
-    // 添加語言選擇器到頁面
+    // 添加語言選擇器（只在 landing 頁面）
     this.addLanguageSelector();
   },
   
@@ -30,9 +28,18 @@ const LocaleManager = {
     if (this.supportedLocales.includes(locale)) {
       const previousLocale = this.currentLocale;
       this.currentLocale = locale;
-      localStorage.setItem('locale', locale);
+      localStorage.setItem('preferredLocale', locale);
       document.documentElement.lang = locale;
       this.updateAllTexts();
+      
+      // 發送語言變更事件
+      const event = new CustomEvent('languageChanged', {
+        detail: {
+          from: previousLocale,
+          to: locale
+        }
+      });
+      window.dispatchEvent(event);
       
       // 跟踪语言切换事件
       if (window.Analytics && previousLocale !== locale) {
@@ -229,11 +236,15 @@ const LocaleManager = {
   },
   
   addLanguageSelector() {
-    // 如果已經存在語言選擇器，不再添加
-    if (document.querySelector('.language-selector')) return;
-    
     // 檢查是否是主頁還是landing頁面
     const isLandingPage = document.querySelector('.landing-container') !== null;
+    const isIndexPage = document.querySelector('.frame') !== null;
+    
+    // 只在 landing 頁面顯示語言選擇器
+    if (!isLandingPage) return;
+    
+    // 如果已經存在語言選擇器，不再添加
+    if (document.querySelector('.language-selector')) return;
     
     // 創建語言選擇器
     const selectorDiv = this.createLanguageSelector();

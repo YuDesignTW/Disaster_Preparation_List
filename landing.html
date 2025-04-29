@@ -51,13 +51,12 @@
                 </div>
                 
                 <!-- 未啟用的按鈕 - 右下 -->
-                <div class="option-button disabled">
+                <a href="bob/intro.html" class="option-button active">
                     <div class="button-content">
                         <span class="button-title">緊急撤離 BOB</span>
                         <span class="button-subtitle">Bug Out Bag</span>
                     </div>
-                    <span class="coming-soon">Coming Soon</span>
-                </div>
+                </a>
             </div>
         </div>
         
@@ -78,6 +77,7 @@
     <script src="locales/th.js"></script>
     <script src="app-data.js"></script>
     <script src="locale.js"></script>
+    <script src="analytics.js"></script>
 
     <script>
         // 跑馬燈初始化
@@ -98,6 +98,27 @@
             // 初始化語言管理器
             if (window.LocaleManager) {
                 window.LocaleManager.init();
+                // 確保語言設定被保存到 localStorage
+                const currentLocale = window.LocaleManager.currentLocale;
+                localStorage.setItem('preferredLocale', currentLocale);
+            }
+            
+            // 初始化Google Analytics
+            if (window.Analytics) {
+                Analytics.init();
+                // 跟踪Landing页面浏览
+                Analytics.pageView('/landing', '防災避難準備清冊 - 首頁');
+                
+                // 跟踪按钮点击
+                document.querySelectorAll('.option-button').forEach(button => {
+                    button.addEventListener('click', function() {
+                        if (this.classList.contains('active')) {
+                            Analytics.trackEvent('landing_button_click', {
+                                'button': this.querySelector('.button-title').textContent
+                            });
+                        }
+                    });
+                });
             }
         });
     </script>
